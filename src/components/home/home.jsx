@@ -1,0 +1,24 @@
+import React from 'react'
+import Social from './social'
+import './home.css'
+import Data from './data' 
+import ScrollDown from './scrollDown' 
+
+const Home = () => {
+  return (
+    <section className='section home' id='home'>
+        <div className='home__container container grid'>
+            <div className='home__content grid'>
+                <Social/>
+
+                <div className="home__img"></div>
+
+                <Data /> 
+            </div>
+            <ScrollDown />
+        </div>
+    </section>
+  )
+}
+
+export default Home
