@@ -1,9 +1,11 @@
 import React from 'react'
-import './skills.css'
-import Frontend from './frontend'
-import Backend from './backend'
-import Devops from './devops'
-import Database from './database'
+import './Skills.css'
+import Frontend from './Frontend'
+import Backend from './Backend'
+import Devops from './Devops'
+import Database from './Database'
+import Version from './version'
+import Mobile from './mobile'
 
 function Skills() {
   return (
@@ -12,18 +14,13 @@ function Skills() {
         <span className="section__subtitle">My technical level</span>
 
         <div className="skills__container container grid">
-            <Frontend>
+            <Frontend />
+            <Backend />
+            <Mobile />
 
-            </Frontend>
-            <Backend> 
-
-            </Backend>
-            <Devops>
-
-            </Devops>
-            <Database>
-                
-            </Database>
+            <Database />  
+            <Version />
+            <Devops />
         </div>
     </section>
   )

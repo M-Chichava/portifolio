@@ -56,7 +56,7 @@ const Data = () => {
             </h1>
             <h3 className="home__subtitle">Software Developer</h3>
             <p className="home__description">
-                My name is Marcos Fabião Chichava,I'm Mozambican, I am a software developer (Web and Mobile), 
+                I am a web and mobile software developer, I'm from Mozambique, 
                 and I'm very passionate and dedicated to my work.
             </p>
             <a href="#contact" className="button button--flex">

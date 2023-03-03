@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './components/header/header';
-import Home from './components/home/home';
-import About from './components/about/about';
-import Skills from './components/skills/skills';
-
+import Header from './components/header/Header';
+import Home from './components/home/Home';
+import About from './components/about/About';
+import Skills from './components/skills/Skills';
+import Services from './components/services/Services';
+import Qualification from './components/qualifications/Qualification';
 const App = () => {
   return (
     <>
@@ -13,6 +14,8 @@ const App = () => {
         <Home />
         <About />
         <Skills />
+        <Services />
+        <Qualification />
       </main>
     </>
   );
