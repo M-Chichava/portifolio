@@ -7,6 +7,7 @@ const ScrollUp = () => {
     function setScrollVisible(){
       if (typeof window !== "undefined") {
         if(window.scrollY >= 38 && scrollUp?.classList !== "undefined" && scrollUp?.classList !== null){
+          console.log('Screen: ', window.scrollY);
           scrollUp?.classList.add("show__scroll")
         }
         else {
