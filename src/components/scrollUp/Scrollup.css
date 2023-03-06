@@ -1,7 +1,7 @@
 .scrollup {
     position: fixed;
     right: 2.5rem;
-    bottom: 20%;
+    bottom: -20%;
     font-size: var(--normal-font-size);
     padding: 0.3rem 0.5rem;
     border-radius: 0.4rem;
