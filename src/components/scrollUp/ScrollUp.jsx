@@ -6,11 +6,11 @@ const ScrollUp = () => {
   const scrollUp = document.querySelector(".scrollup")
     function setScrollVisible(){
       if (typeof window !== "undefined") {
-        if(window.scrollY >= 38){
-          scrollUp.classList.add("show__scroll")
+        if(window.scrollY >= 38 && scrollUp?.classList !== "undefined" && scrollUp?.classList !== null){
+          scrollUp?.classList.add("show__scroll")
         }
         else {
-          scrollUp.classList.remove("show__scroll")
+          scrollUp?.classList.remove("show__scroll")
         }
       }
     }
