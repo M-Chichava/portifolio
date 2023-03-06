@@ -59,7 +59,7 @@
     visibility: hidden;
     opacity: 0;
     padding: 0 1rem;
-    transition: .8s;
+    transition: .5s;
 }
 
 .services__modal-content{
@@ -69,6 +69,19 @@
     padding: 4.5rem 2.5rem 2.5rem;
     border-radius: 1.5rem;
 }
+
+.services__img {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--mb-2);
+}
+
+.about__img{
+    width: 200px;
+    border-radius: 1.5rem;
+    justify-self: center;
+}
+
 
 .services__modal-title,
 .services__modal-description {

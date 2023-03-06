@@ -6,6 +6,12 @@ import About from './components/about/About';
 import Skills from './components/skills/Skills';
 import Services from './components/services/Services';
 import Qualification from './components/qualifications/Qualification';
+import Testimonial from './components/testimonials/Testimonials';
+import Contact from './components/contact/Contact';
+import Footer from './components/footer/Footer';
+import ScrollUp from './components/scrollUp/ScrollUp';
+
+
 const App = () => {
   return (
     <>
@@ -16,7 +22,12 @@ const App = () => {
         <Skills />
         <Services />
         <Qualification />
+        <Testimonial />
+        <Contact />
       </main>
+      <Footer />
+      <ScrollUp />
+
     </>
   );
 }

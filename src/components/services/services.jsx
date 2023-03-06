@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './Services.css'
-
+import ServicesImg from '../../assets/Logo-black.png'
 const Services = () => {
     const [toggleState, setToggleState] = useState(0)
      
@@ -9,11 +9,17 @@ const Services = () => {
     }
 
     return (
-        <div className="services section" id="services">
+        <section className="services section" id="services">
             <h2 className="section__title">Services</h2>
             <span className="section__subtitle">What I offer</span>
 
+            <div className='services__img'>
+                 
+            <img src={ServicesImg} alt="" className="about__img" />
+             
+            </div>
             <div className="services__container container grid">
+                
                 <div className="services__content">
                     <i className="uil uil-web-grid services__icon"></i>
                     <h3 className="services__title">Product  Design</h3>
@@ -203,7 +209,7 @@ const Services = () => {
                 </div>
             </div>
 
-        </div>
+        </section>
     )
 }
 
