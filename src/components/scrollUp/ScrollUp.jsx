@@ -3,9 +3,21 @@ import './Scrollup.css'
 
 const ScrollUp = () => {
    
-    
+  const scrollUp = document.querySelector(".scrollup")
+    function setScrollVisible(){
+      if (typeof window !== "undefined") {
+        if(window.scrollY >= 56){
+          scrollUp.classList.add("show__scroll")
+        }
+        else {
+          scrollUp.classList.remove("show__scroll")
+        }
+      }
+    }
+    if (typeof window !== "undefined") {
+      window.addEventListener('scroll', setScrollVisible)
+    }
      
-        console.log( );
       //  window.addEventListener("scroll", () => {
            // const scrollUp = document.queryselector(".scrollup");
             
