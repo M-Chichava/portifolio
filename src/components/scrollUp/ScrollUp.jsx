@@ -6,7 +6,7 @@ const ScrollUp = () => {
   const scrollUp = document.querySelector(".scrollup")
     function setScrollVisible(){
       if (typeof window !== "undefined") {
-        if(window.scrollY >= 56){
+        if(window.scrollY >= 38){
           scrollUp.classList.add("show__scroll")
         }
         else {

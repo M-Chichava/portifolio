@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
 
             <span className="footer__copy">
-              &#169; Marcos Chichava. All rights reserved
+            {new Date().getFullYear() }  &#169; Marcos Chichava. All rights reserved
             </span>
         </div>
     </footer>
