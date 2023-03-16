@@ -16,14 +16,9 @@ const Testemunial = () => {
       <h2 className="section__title">My clients say</h2>
       <span className="section__subtitle">Testimonial</span>
 
-      <Swiper
-        loop = {true}
+      <Swiper 
         grabCursor = {true}
         spaceBetween={24}
-        autoplay = {{
-          delay: 2550,
-          disableOnInteraction: false
-        }}
         pagination={{
           clickable: true,
         }}

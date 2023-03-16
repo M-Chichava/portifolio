@@ -7,7 +7,6 @@ const ScrollUp = () => {
         if (typeof window !== "undefined") {
           
           if(window.scrollY >= 38){
-            console.log('Screen: ', window.scrollY);
             document?.querySelector(".scrollup")?.classList.add("show__scroll")
           }
           else {
