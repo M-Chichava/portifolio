@@ -56,8 +56,8 @@ const Data = () => {
             </h1>
             <h3 className="home__subtitle">Software Developer</h3>
             <p className="home__description">
-                I am a web and mobile software developer, I'm from Mozambique, 
-                and I'm very passionate and dedicated to my work.
+                I am a software developer specializing in web and mobile development, 
+                originally from Mozambique. I am extremely passionate and dedicated to my work.
             </p>
             <a href="#contact" className="button button--flex">
                 Say Hello
