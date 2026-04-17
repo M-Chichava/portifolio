@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0a02"/>
+      <stop offset="100%" style="stop-color:#1a1002"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#f59e0b" flood-opacity="0.18"/></filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="20" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <rect width="800" height="480" fill="url(#bg)"/>
+  <circle cx="700" cy="80"  r="160" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.07"/>
+  <circle cx="700" cy="80"  r="110" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.09"/>
+  <circle cx="80"  cy="400" r="130" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.07"/>
+  <ellipse cx="250" cy="260" rx="200" ry="170" fill="#f59e0b" opacity="0.03" filter="url(#glow)"/>
+
+  <!-- Browser window -->
+  <rect x="28" y="44" width="448" height="398" rx="13" fill="#120e02" filter="url(#shadow)"/>
+  <rect x="28" y="44" width="448" height="30" rx="13" fill="#1c1603"/>
+  <rect x="28" y="58" width="448" height="16" fill="#1c1603"/>
+  <circle cx="52" cy="59" r="5" fill="#ff5f57"/>
+  <circle cx="66" cy="59" r="5" fill="#febc2e"/>
+  <circle cx="80" cy="59" r="5" fill="#28c840"/>
+  <rect x="100" y="52" width="260" height="14" rx="7" fill="rgba(255,255,255,0.05)"/>
+  <text x="230" y="62" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.25)">https://ctabasededados.co.mz</text>
+
+  <!-- ── App layout: top bar + sidebar + main ── -->
+  <!-- Top app bar -->
+  <rect x="28" y="74" width="448" height="32" fill="#1a1203"/>
+  <text x="46"  y="94" font-family="system-ui" font-size="11" fill="#f59e0b" font-weight="900">CTA</text>
+  <text x="80"  y="94" font-family="system-ui" font-size="8.5" fill="rgba(255,255,255,0.55)">Bases de Dados — SME Platform</text>
+  <!-- User avatar placeholder -->
+  <circle cx="456" cy="90" r="10" fill="#f59e0b" opacity="0.8"/>
+  <text x="456" cy="90" y="94" text-anchor="middle" font-family="system-ui" font-size="8" fill="white" font-weight="700">MC</text>
+
+  <!-- Sidebar -->
+  <rect x="28" y="106" width="88" height="336" fill="#160f02"/>
+  <!-- Sidebar items -->
+  <rect x="36" y="116" width="72" height="22" rx="6" fill="#f59e0b" opacity="0.85"/>
+  <text x="72" y="131" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="white" font-weight="700">📊 Dashboard</text>
+  <text x="72" y="154" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.4)">🏢 Companies</text>
+  <text x="72" y="172" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.4)">👥 Users</text>
+  <text x="72" y="190" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.4)">📄 Reports</text>
+  <text x="72" y="208" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.4)">⚙️ Settings</text>
+  <!-- Angular badge in sidebar -->
+  <rect x="36" y="390" width="72" height="18" rx="9" fill="rgba(255,0,0,0.15)" stroke="rgba(255,0,0,0.25)" stroke-width="1"/>
+  <text x="72" y="402" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="#ef4444" font-weight="700">Angular</text>
+
+  <!-- Main content area -->
+  <!-- KPI cards row -->
+  <rect x="122" y="110" width="80" height="46" rx="8" fill="#1e1604" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+  <text x="162" y="128" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.4)" font-weight="600">COMPANIES</text>
+  <text x="162" y="146" text-anchor="middle" font-family="system-ui" font-size="16" fill="#f59e0b" font-weight="900">284</text>
+
+  <rect x="208" y="110" width="80" height="46" rx="8" fill="#1e1604" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+  <text x="248" y="128" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.4)" font-weight="600">ACTIVE</text>
+  <text x="248" y="146" text-anchor="middle" font-family="system-ui" font-size="16" fill="#f59e0b" font-weight="900">191</text>
+
+  <rect x="294" y="110" width="80" height="46" rx="8" fill="#1e1604" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+  <text x="334" y="128" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.4)" font-weight="600">REPORTS</text>
+  <text x="334" y="146" text-anchor="middle" font-family="system-ui" font-size="16" fill="#f59e0b" font-weight="900">47</text>
+
+  <rect x="380" y="110" width="88" height="46" rx="8" fill="#1e1604" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+  <text x="424" y="128" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.4)" font-weight="600">GROWTH</text>
+  <text x="424" y="146" text-anchor="middle" font-family="system-ui" font-size="16" fill="#22c55e" font-weight="900">+18%</text>
+
+  <!-- Table header -->
+  <rect x="122" y="164" width="346" height="22" rx="5" fill="rgba(245,158,11,0.08)"/>
+  <text x="136" y="178" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.5)" font-weight="700">COMPANY</text>
+  <text x="258" y="178" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.5)" font-weight="700">SECTOR</text>
+  <text x="334" y="178" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.5)" font-weight="700">STATUS</text>
+  <text x="408" y="178" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.5)" font-weight="700">DATE</text>
+
+  <!-- Table rows -->
+  <!-- Row 1 (highlighted) -->
+  <rect x="122" y="186" width="346" height="24" rx="4" fill="rgba(245,158,11,0.05)"/>
+  <text x="136" y="201" font-family="system-ui" font-size="8" fill="white" font-weight="600">Empresa Alpha Lda</text>
+  <text x="258" y="201" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.5)">Technology</text>
+  <rect x="330" y="191" width="40" height="14" rx="7" fill="rgba(34,197,94,0.15)"/>
+  <text x="350" y="201" text-anchor="middle" font-family="system-ui" font-size="7" fill="#22c55e" font-weight="600">Active</text>
+  <text x="408" y="201" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.4)">Mar 2024</text>
+
+  <!-- Row 2 -->
+  <rect x="122" y="210" width="346" height="24" rx="4"/>
+  <text x="136" y="225" font-family="system-ui" font-size="8" fill="white" font-weight="600">Beta Solutions SA</text>
+  <text x="258" y="225" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.5)">Finance</text>
+  <rect x="330" y="215" width="40" height="14" rx="7" fill="rgba(34,197,94,0.15)"/>
+  <text x="350" y="225" text-anchor="middle" font-family="system-ui" font-size="7" fill="#22c55e" font-weight="600">Active</text>
+  <text x="408" y="225" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.4)">Feb 2024</text>
+
+  <!-- Row 3 -->
+  <rect x="122" y="234" width="346" height="24" rx="4" fill="rgba(245,158,11,0.05)"/>
+  <text x="136" y="249" font-family="system-ui" font-size="8" fill="white" font-weight="600">Gamma Comercial</text>
+  <text x="258" y="249" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.5)">Retail</text>
+  <rect x="330" y="239" width="50" height="14" rx="7" fill="rgba(234,179,8,0.15)"/>
+  <text x="355" y="249" text-anchor="middle" font-family="system-ui" font-size="7" fill="#eab308" font-weight="600">Pending</text>
+  <text x="408" y="249" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.4)">Jan 2024</text>
+
+  <!-- Row 4 -->
+  <rect x="122" y="258" width="346" height="24" rx="4"/>
+  <text x="136" y="273" font-family="system-ui" font-size="8" fill="white" font-weight="600">Delta Logistics Moz</text>
+  <text x="258" y="273" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.5)">Logistics</text>
+  <rect x="330" y="263" width="40" height="14" rx="7" fill="rgba(34,197,94,0.15)"/>
+  <text x="350" y="273" text-anchor="middle" font-family="system-ui" font-size="7" fill="#22c55e" font-weight="600">Active</text>
+  <text x="408" y="273" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.4)">Dec 2023</text>
+
+  <!-- Row 5 -->
+  <rect x="122" y="282" width="346" height="24" rx="4" fill="rgba(245,158,11,0.05)"/>
+  <text x="136" y="297" font-family="system-ui" font-size="8" fill="white" font-weight="600">Epsilon Capital SA</text>
+  <text x="258" y="297" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.5)">Banking</text>
+  <rect x="330" y="287" width="40" height="14" rx="7" fill="rgba(239,68,68,0.15)"/>
+  <text x="350" y="297" text-anchor="middle" font-family="system-ui" font-size="7" fill="#ef4444" font-weight="600">Inactive</text>
+  <text x="408" y="297" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.4)">Nov 2023</text>
+
+  <!-- NgRx State badge in app -->
+  <rect x="130" y="322" width="88" height="18" rx="9" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+  <text x="174" y="334" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="#f59e0b" font-weight="600">NgRx Store Active</text>
+  <rect x="226" y="322" width="100" height="18" rx="9" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+  <text x="276" y="334" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="#f59e0b" font-weight="600">Micro Frontend</text>
+
+  <!-- ── Right info panel ── -->
+  <text x="510" y="108" font-family="system-ui" font-size="10" fill="rgba(245,158,11,0.8)" font-weight="700" letter-spacing="1">ENTERPRISE PLATFORM</text>
+  <text x="510" y="138" font-family="system-ui" font-size="24" fill="white" font-weight="900" letter-spacing="-0.8">CTA — SME</text>
+  <text x="510" y="164" font-family="system-ui" font-size="24" fill="#f59e0b" font-weight="900" letter-spacing="-0.8">Platform</text>
+  <text x="510" y="192" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.5)">Angular Micro Frontend</text>
+  <text x="510" y="206" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.5)">enterprise data management.</text>
+  <line x1="510" y1="222" x2="770" y2="222" stroke="rgba(245,158,11,0.15)" stroke-width="1"/>
+  <text x="510" y="250" font-family="system-ui" font-size="20" fill="white" font-weight="900">284+</text>
+  <text x="510" y="263" font-family="system-ui" font-size="8.5" fill="rgba(255,255,255,0.4)">Companies</text>
+  <text x="610" y="250" font-family="system-ui" font-size="20" fill="white" font-weight="900">3</text>
+  <text x="610" y="263" font-family="system-ui" font-size="8.5" fill="rgba(255,255,255,0.4)">Modules</text>
+  <!-- Tech tags -->
+  <rect x="510" y="282" width="56" height="19" rx="9.5" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.25)" stroke-width="1"/>
+  <text x="538" y="295" text-anchor="middle" font-family="system-ui" font-size="8.5" fill="#f59e0b" font-weight="600">Angular</text>
+  <rect x="574" y="282" width="52" height="19" rx="9.5" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.25)" stroke-width="1"/>
+  <text x="600" y="295" text-anchor="middle" font-family="system-ui" font-size="8.5" fill="#f59e0b" font-weight="600">NgRx</text>
+  <rect x="634" y="282" width="50" height="19" rx="9.5" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.25)" stroke-width="1"/>
+  <text x="659" y="295" text-anchor="middle" font-family="system-ui" font-size="8.5" fill="#f59e0b" font-weight="600">.NET</text>
+  <rect x="510" y="308" width="96" height="19" rx="9.5" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.25)" stroke-width="1"/>
+  <text x="558" y="321" text-anchor="middle" font-family="system-ui" font-size="8.5" fill="#f59e0b" font-weight="600">Micro Frontend</text>
+  <rect x="614" y="308" width="72" height="19" rx="9.5" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.25)" stroke-width="1"/>
+  <text x="650" y="321" text-anchor="middle" font-family="system-ui" font-size="8.5" fill="#f59e0b" font-weight="600">SQL Server</text>
+  <!-- Live badge -->
+  <rect x="510" y="356" width="80" height="22" rx="11" fill="rgba(245,158,11,0.15)" stroke="rgba(245,158,11,0.35)" stroke-width="1"/>
+  <circle cx="524" cy="367" r="4" fill="#f59e0b"/>
+  <text x="543" y="371" font-family="system-ui" font-size="9" fill="#f59e0b" font-weight="700">Live Site</text>
+</svg>

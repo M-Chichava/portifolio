@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0e0612"/>
+      <stop offset="100%" style="stop-color:#160a1c"/>
+    </linearGradient>
+    <linearGradient id="screen1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a2e"/>
+      <stop offset="100%" style="stop-color:#2d1254"/>
+    </linearGradient>
+    <linearGradient id="screen2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1a2e"/>
+      <stop offset="100%" style="stop-color:#14347a"/>
+    </linearGradient>
+    <linearGradient id="screen3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a1a"/>
+      <stop offset="100%" style="stop-color:#3d0f3d"/>
+    </linearGradient>
+    <linearGradient id="btnPink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#db2777"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#ec4899" flood-opacity="0.2"/></filter>
+    <filter id="glow"><feGaussianBlur stdDeviation="22" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="phoneShadow"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.5"/></filter>
+  </defs>
+
+  <rect width="800" height="480" fill="url(#bg)"/>
+  <circle cx="710" cy="70"  r="160" fill="none" stroke="#ec4899" stroke-width="1" opacity="0.07"/>
+  <circle cx="710" cy="70"  r="110" fill="none" stroke="#ec4899" stroke-width="1" opacity="0.09"/>
+  <circle cx="80"  cy="410" r="130" fill="none" stroke="#ec4899" stroke-width="1" opacity="0.07"/>
+  <ellipse cx="250" cy="250" rx="200" ry="170" fill="#ec4899" opacity="0.04" filter="url(#glow)"/>
+
+  <!-- Figma-style canvas grid -->
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(236,72,153,0.06)" stroke-width="0.5"/>
+  </pattern>
+  <rect x="28" y="44" width="448" height="398" rx="13" fill="url(#grid)" filter="url(#shadow)"/>
+  <rect x="28" y="44" width="448" height="398" rx="13" fill="rgba(22,8,30,0.7)"/>
+
+  <!-- Figma toolbar -->
+  <rect x="28" y="44" width="448" height="28" rx="13" fill="#1e0e2c"/>
+  <rect x="28" y="57" width="448" height="15" fill="#1e0e2c"/>
+  <!-- Figma dots -->
+  <circle cx="52" cy="58" r="5" fill="#ff5f57"/>
+  <circle cx="66" cy="58" r="5" fill="#febc2e"/>
+  <circle cx="80" cy="58" r="5" fill="#28c840"/>
+  <!-- Figma logo area -->
+  <text x="180" y="65" text-anchor="middle" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.5)" font-weight="600">Figma — Microcredit.fig</text>
+  <!-- Figma tools -->
+  <text x="380" y="65" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.3)">▷  100%  ●</text>
+
+  <!-- Design label -->
+  <text x="46" y="92" font-family="system-ui" font-size="7.5" fill="rgba(236,72,153,0.7)" font-weight="700">Microcredit App — UI/UX Design System</text>
+  <!-- Layer panel (left strip) -->
+  <rect x="28" y="72" width="42" height="370" fill="rgba(30,14,44,0.8)"/>
+  <text x="49" y="92" text-anchor="middle" font-family="system-ui" font-size="6.5" fill="rgba(255,255,255,0.3)" font-weight="600">LAYERS</text>
+  <text x="49" y="110" text-anchor="middle" font-family="system-ui" font-size="6" fill="rgba(255,255,255,0.2)">▾ App</text>
+  <text x="49" y="124" text-anchor="middle" font-family="system-ui" font-size="6" fill="rgba(236,72,153,0.6)">• Screen 1</text>
+  <text x="49" y="136" text-anchor="middle" font-family="system-ui" font-size="6" fill="rgba(255,255,255,0.2)">• Screen 2</text>
+  <text x="49" y="148" text-anchor="middle" font-family="system-ui" font-size="6" fill="rgba(255,255,255,0.2)">• Screen 3</text>
+  <text x="49" y="166" text-anchor="middle" font-family="system-ui" font-size="6" fill="rgba(255,255,255,0.15)">Colors</text>
+  <text x="49" y="178" text-anchor="middle" font-family="system-ui" font-size="6" fill="rgba(255,255,255,0.15)">Fonts</text>
+  <text x="49" y="190" text-anchor="middle" font-family="system-ui" font-size="6" fill="rgba(255,255,255,0.15)">Icons</text>
+
+  <!-- ── Phone 1: Onboarding ── -->
+  <rect x="80"  y="80" width="112" height="200" rx="14" fill="#1a1a2e" filter="url(#phoneShadow)"/>
+  <rect x="84"  y="84" width="104" height="192" rx="11" fill="url(#screen1)"/>
+  <!-- Notch -->
+  <rect x="118" y="88" width="36" height="8" rx="4" fill="rgba(0,0,0,0.6)"/>
+  <!-- Content -->
+  <circle cx="136" cy="128" r="22" fill="rgba(236,72,153,0.2)" stroke="rgba(236,72,153,0.4)" stroke-width="1.5"/>
+  <text x="136" y="134" text-anchor="middle" font-family="system-ui" font-size="20">💳</text>
+  <text x="136" y="165" text-anchor="middle" font-family="system-ui" font-size="9" fill="white" font-weight="800">MicroCredit</text>
+  <text x="136" y="178" text-anchor="middle" font-family="system-ui" font-size="7" fill="rgba(255,255,255,0.5)">Fast • Secure • Simple</text>
+  <rect x="100" y="190" width="72" height="18" rx="9" fill="url(#btnPink)"/>
+  <text x="136" y="202" text-anchor="middle" font-family="system-ui" font-size="8" fill="white" font-weight="700">Get Started</text>
+  <text x="136" y="224" text-anchor="middle" font-family="system-ui" font-size="7" fill="rgba(255,255,255,0.4)">Already have an account?</text>
+  <text x="136" y="236" text-anchor="middle" font-family="system-ui" font-size="7" fill="#ec4899" font-weight="600">Sign In</text>
+  <text x="136" y="270" text-anchor="middle" font-family="system-ui" font-size="7" fill="rgba(236,72,153,0.6)">Onboarding</text>
+
+  <!-- ── Phone 2: Dashboard (selected/glow) ── -->
+  <rect x="203" y="64" width="118" height="214" rx="14" fill="#1e1e2e" stroke="rgba(236,72,153,0.4)" stroke-width="2" filter="url(#phoneShadow)"/>
+  <rect x="207" y="68" width="110" height="206" rx="11" fill="url(#screen2)"/>
+  <rect x="238" y="72" width="48" height="8" rx="4" fill="rgba(0,0,0,0.6)"/>
+  <!-- Dashboard content -->
+  <text x="262" y="98" text-anchor="middle" font-family="system-ui" font-size="8" fill="white" font-weight="700">My Dashboard</text>
+  <!-- Balance card -->
+  <rect x="216" y="104" width="92" height="44" rx="8" fill="rgba(236,72,153,0.25)" stroke="rgba(236,72,153,0.3)" stroke-width="1"/>
+  <text x="262" y="118" text-anchor="middle" font-family="system-ui" font-size="7" fill="rgba(255,255,255,0.6)">Available Credit</text>
+  <text x="262" y="136" text-anchor="middle" font-family="system-ui" font-size="14" fill="white" font-weight="900">MT 25,000</text>
+  <!-- Stats mini -->
+  <rect x="216" y="154" width="42" height="32" rx="6" fill="rgba(255,255,255,0.06)"/>
+  <text x="237" y="167" text-anchor="middle" font-family="system-ui" font-size="7" fill="rgba(255,255,255,0.5)">Paid</text>
+  <text x="237" y="179" text-anchor="middle" font-family="system-ui" font-size="9" fill="#22c55e" font-weight="800">3</text>
+  <rect x="266" y="154" width="42" height="32" rx="6" fill="rgba(255,255,255,0.06)"/>
+  <text x="287" y="167" text-anchor="middle" font-family="system-ui" font-size="7" fill="rgba(255,255,255,0.5)">Active</text>
+  <text x="287" y="179" text-anchor="middle" font-family="system-ui" font-size="9" fill="#ec4899" font-weight="800">1</text>
+  <!-- Quick actions -->
+  <text x="216" y="200" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.5)">Quick Actions</text>
+  <rect x="216" y="205" width="88" height="18" rx="9" fill="url(#btnPink)" opacity="0.9"/>
+  <text x="260" y="217" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="white" font-weight="700">Apply for Loan</text>
+  <!-- Bottom nav -->
+  <rect x="207" y="252" width="110" height="22" fill="rgba(0,0,0,0.4)"/>
+  <text x="228" y="266" text-anchor="middle" font-family="system-ui" font-size="11">🏠</text>
+  <text x="249" y="266" text-anchor="middle" font-family="system-ui" font-size="11">💰</text>
+  <text x="270" y="266" text-anchor="middle" font-family="system-ui" font-size="11">📊</text>
+  <text x="291" y="266" text-anchor="middle" font-family="system-ui" font-size="11">👤</text>
+  <!-- Selected badge -->
+  <text x="262" y="296" text-anchor="middle" font-family="system-ui" font-size="7" fill="#ec4899" font-weight="700">★ Active Screen</text>
+
+  <!-- ── Phone 3: Loan Application ── -->
+  <rect x="334" y="80" width="112" height="200" rx="14" fill="#1a1a2e" filter="url(#phoneShadow)"/>
+  <rect x="338" y="84" width="104" height="192" rx="11" fill="url(#screen3)"/>
+  <rect x="372" y="88" width="36" height="8" rx="4" fill="rgba(0,0,0,0.6)"/>
+  <!-- Loan form -->
+  <text x="390" y="110" text-anchor="middle" font-family="system-ui" font-size="8" fill="white" font-weight="700">Apply for Loan</text>
+  <text x="348" y="126" font-family="system-ui" font-size="7" fill="rgba(255,255,255,0.4)">Amount</text>
+  <rect x="346" y="130" width="88" height="16" rx="6" fill="rgba(255,255,255,0.08)" stroke="rgba(236,72,153,0.3)" stroke-width="1"/>
+  <text x="390" y="141" text-anchor="middle" font-family="system-ui" font-size="8" fill="white">MT 10,000</text>
+  <text x="348" y="158" font-family="system-ui" font-size="7" fill="rgba(255,255,255,0.4)">Duration</text>
+  <rect x="346" y="162" width="88" height="16" rx="6" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="390" y="173" text-anchor="middle" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.6)">12 months</text>
+  <!-- Progress bar -->
+  <text x="348" y="192" font-family="system-ui" font-size="7" fill="rgba(255,255,255,0.4)">Interest</text>
+  <rect x="346" y="196" width="88" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+  <rect x="346" y="196" width="52" height="6" rx="3" fill="#ec4899"/>
+  <text x="390" y="214" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="#ec4899" font-weight="700">3.5% / month</text>
+  <rect x="356" y="224" width="68" height="16" rx="8" fill="url(#btnPink)" opacity="0.85"/>
+  <text x="390" y="235" text-anchor="middle" font-family="system-ui" font-size="7.5" fill="white" font-weight="700">Submit →</text>
+  <text x="390" y="264" text-anchor="middle" font-family="system-ui" font-size="7" fill="rgba(236,72,153,0.6)">Loan Application</text>
+
+  <!-- Design system swatches at bottom -->
+  <rect x="80" y="300" width="350" height="38" rx="8" fill="rgba(30,14,44,0.8)"/>
+  <text x="96" y="314" font-family="system-ui" font-size="7" fill="rgba(255,255,255,0.4)" font-weight="600">DESIGN TOKENS</text>
+  <circle cx="102" cy="328" r="8" fill="#ec4899"/>
+  <circle cx="122" cy="328" r="8" fill="#8b5cf6"/>
+  <circle cx="142" cy="328" r="8" fill="#0ea5e9"/>
+  <circle cx="162" cy="328" r="8" fill="#22c55e"/>
+  <circle cx="182" cy="328" r="8" fill="#f59e0b"/>
+  <circle cx="202" cy="328" r="8" fill="#1a0a2e"/>
+  <circle cx="222" cy="328" r="8" fill="#ffffff" opacity="0.9"/>
+  <rect x="248" y="320" width="60" height="14" rx="4" fill="rgba(255,255,255,0.06)"/>
+  <text x="278" y="330" text-anchor="middle" font-family="system-ui" font-size="7" fill="rgba(255,255,255,0.35)">Inter / 400</text>
+  <rect x="316" y="320" width="60" height="14" rx="4" fill="rgba(255,255,255,0.06)"/>
+  <text x="346" y="330" text-anchor="middle" font-family="system-ui" font-size="7" fill="rgba(255,255,255,0.35)">Inter / 700</text>
+
+  <!-- Artboard labels -->
+  <text x="136" y="348" text-anchor="middle" font-family="system-ui" font-size="7" fill="rgba(255,255,255,0.2)">Screen/01</text>
+  <text x="262" y="348" text-anchor="middle" font-family="system-ui" font-size="7" fill="rgba(236,72,153,0.5)" font-weight="600">Screen/02 ★</text>
+  <text x="390" y="348" text-anchor="middle" font-family="system-ui" font-size="7" fill="rgba(255,255,255,0.2)">Screen/03</text>
+
+  <!-- ── Right info panel ── -->
+  <text x="510" y="108" font-family="system-ui" font-size="10" fill="rgba(236,72,153,0.8)" font-weight="700" letter-spacing="1">UI/UX DESIGN</text>
+  <text x="510" y="138" font-family="system-ui" font-size="26" fill="white" font-weight="900" letter-spacing="-0.8">Micro</text>
+  <text x="510" y="166" font-family="system-ui" font-size="26" fill="#ec4899" font-weight="900" letter-spacing="-0.8">Credit</text>
+  <text x="510" y="192" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.5)">Complete UI/UX from</text>
+  <text x="510" y="206" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.5)">wireframes to hi-fi prototype.</text>
+  <line x1="510" y1="222" x2="770" y2="222" stroke="rgba(236,72,153,0.15)" stroke-width="1"/>
+  <text x="510" y="250" font-family="system-ui" font-size="20" fill="white" font-weight="900">12+</text>
+  <text x="510" y="263" font-family="system-ui" font-size="8.5" fill="rgba(255,255,255,0.4)">Screens</text>
+  <text x="600" y="250" font-family="system-ui" font-size="20" fill="white" font-weight="900">3</text>
+  <text x="600" y="263" font-family="system-ui" font-size="8.5" fill="rgba(255,255,255,0.4)">User Flows</text>
+  <!-- Tech tags -->
+  <rect x="510" y="282" width="46" height="19" rx="9.5" fill="rgba(236,72,153,0.12)" stroke="rgba(236,72,153,0.25)" stroke-width="1"/>
+  <text x="533" y="295" text-anchor="middle" font-family="system-ui" font-size="8.5" fill="#ec4899" font-weight="600">Figma</text>
+  <rect x="564" y="282" width="62" height="19" rx="9.5" fill="rgba(236,72,153,0.12)" stroke="rgba(236,72,153,0.25)" stroke-width="1"/>
+  <text x="595" y="295" text-anchor="middle" font-family="system-ui" font-size="8.5" fill="#ec4899" font-weight="600">UI/UX</text>
+  <rect x="510" y="308" width="90" height="19" rx="9.5" fill="rgba(236,72,153,0.12)" stroke="rgba(236,72,153,0.25)" stroke-width="1"/>
+  <text x="555" y="321" text-anchor="middle" font-family="system-ui" font-size="8.5" fill="#ec4899" font-weight="600">Design System</text>
+  <rect x="608" y="308" width="78" height="19" rx="9.5" fill="rgba(236,72,153,0.12)" stroke="rgba(236,72,153,0.25)" stroke-width="1"/>
+  <text x="647" y="321" text-anchor="middle" font-family="system-ui" font-size="8.5" fill="#ec4899" font-weight="600">Prototyping</text>
+  <!-- Figma badge -->
+  <rect x="510" y="356" width="100" height="22" rx="11" fill="rgba(236,72,153,0.15)" stroke="rgba(236,72,153,0.35)" stroke-width="1"/>
+  <text x="540" y="371" font-family="system-ui" font-size="9" fill="#ec4899" font-weight="700">Open in Figma →</text>
+</svg>

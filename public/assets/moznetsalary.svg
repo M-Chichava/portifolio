@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#060e08"/>
+      <stop offset="100%" style="stop-color:#0d1e10"/>
+    </linearGradient>
+    <!-- Logo gradient -->
+    <linearGradient id="logoGrad" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" style="stop-color:#043d1e"/>
+      <stop offset="50%" style="stop-color:#065f35"/>
+      <stop offset="100%" style="stop-color:#07ac4b"/>
+    </linearGradient>
+    <!-- Screen gradient -->
+    <linearGradient id="screenGrad" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" style="stop-color:#043d1e"/>
+      <stop offset="50%" style="stop-color:#065f35"/>
+      <stop offset="100%" style="stop-color:#07ac4b"/>
+    </linearGradient>
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="480" fill="url(#bgGrad)"/>
+
+  <!-- Decorative circles -->
+  <circle cx="680" cy="80" r="140" fill="none" stroke="#07ac4b" stroke-width="1" opacity="0.08"/>
+  <circle cx="680" cy="80" r="100" fill="none" stroke="#07ac4b" stroke-width="1" opacity="0.1"/>
+  <circle cx="120" cy="400" r="120" fill="none" stroke="#07ac4b" stroke-width="1" opacity="0.07"/>
+  <circle cx="120" cy="400" r="80" fill="none" stroke="#07ac4b" stroke-width="1" opacity="0.09"/>
+
+  <!-- Glow blob behind phone -->
+  <ellipse cx="400" cy="250" rx="160" ry="200" fill="#07ac4b" opacity="0.07" filter="url(#softglow)"/>
+
+  <!-- Phone frame shadow -->
+  <rect x="295" y="45" width="216" height="395" rx="36" fill="#07ac4b" opacity="0.15" filter="url(#softglow)"/>
+
+  <!-- Phone outer body -->
+  <rect x="296" y="46" width="214" height="393" rx="35" fill="#0d1612"/>
+
+  <!-- Phone inner body (bezel) -->
+  <rect x="302" y="52" width="202" height="381" rx="31" fill="#111a13"/>
+
+  <!-- Screen -->
+  <rect x="307" y="57" width="192" height="371" rx="27" fill="url(#screenGrad)"/>
+
+  <!-- Screen shine overlay -->
+  <rect x="307" y="57" width="192" height="180" rx="27" fill="rgba(255,255,255,0.06)"/>
+
+  <!-- Dynamic island / notch -->
+  <rect x="369" y="65" width="68" height="16" rx="8" fill="rgba(0,0,0,0.6)"/>
+
+  <!-- Logo box -->
+  <rect x="369" y="108" width="68" height="68" rx="18" fill="url(#logoGrad)" filter="url(#glow)"/>
+
+  <!-- Logo shine -->
+  <rect x="369" y="108" width="68" height="32" rx="18" fill="rgba(255,255,255,0.1)"/>
+
+  <!-- Mini bar chart inside logo -->
+  <rect x="376" y="160" width="8"  height="8"  rx="1.5" fill="rgba(255,255,255,0.25)"/>
+  <rect x="386" y="155" width="8"  height="13" rx="1.5" fill="rgba(255,255,255,0.25)"/>
+  <rect x="396" y="150" width="8"  height="18" rx="1.5" fill="rgba(255,255,255,0.25)"/>
+  <rect x="406" y="157" width="8"  height="11" rx="1.5" fill="rgba(255,255,255,0.25)"/>
+  <rect x="416" y="163" width="8"  height="5"  rx="1.5" fill="rgba(255,255,255,0.25)"/>
+
+  <!-- Logo monogram -->
+  <text x="403" y="146" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-weight="900" font-size="20" fill="white" letter-spacing="-1" opacity="0.95">MzN$</text>
+
+  <!-- App name -->
+  <text x="403" y="196" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-weight="800" font-size="13" fill="white" letter-spacing="-0.3">Moz Net Salary</text>
+
+  <!-- Tagline -->
+  <text x="403" y="212" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-weight="500" font-size="8.5" fill="rgba(255,255,255,0.55)">Real salary. No surprises.</text>
+
+  <!-- UI: Gross salary card -->
+  <rect x="317" y="228" width="172" height="44" rx="10" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+  <text x="330" y="245" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.5)" font-weight="600" letter-spacing="0.5">GROSS SALARY</text>
+  <text x="330" y="262" font-family="system-ui" font-size="15" fill="white" font-weight="800" letter-spacing="-0.5">MT 50,000</text>
+
+  <!-- Arrow down -->
+  <text x="403" y="290" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.4)">↓</text>
+
+  <!-- UI: Net salary card (highlighted) -->
+  <rect x="317" y="298" width="172" height="50" rx="10" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <text x="330" y="315" font-family="system-ui" font-size="7.5" fill="rgba(255,255,255,0.6)" font-weight="700" letter-spacing="0.5">NET SALARY (IRPS + INSS)</text>
+  <text x="330" y="337" font-family="system-ui" font-size="18" fill="#a7f3c0" font-weight="900" letter-spacing="-0.5">MT 38,420</text>
+
+  <!-- Language pills -->
+  <rect x="317" y="360" width="38" height="14" rx="7" fill="rgba(255,255,255,0.12)"/>
+  <text x="336" y="370" text-anchor="middle" font-family="system-ui" font-size="6.5" fill="rgba(255,255,255,0.7)" font-weight="600">PT</text>
+  <rect x="359" y="360" width="34" height="14" rx="7" fill="rgba(255,255,255,0.12)"/>
+  <text x="376" y="370" text-anchor="middle" font-family="system-ui" font-size="6.5" fill="rgba(255,255,255,0.7)" font-weight="600">EN</text>
+  <rect x="397" y="360" width="38" height="14" rx="7" fill="rgba(255,255,255,0.12)"/>
+  <text x="416" y="370" text-anchor="middle" font-family="system-ui" font-size="6.5" fill="rgba(255,255,255,0.7)" font-weight="600">TSO</text>
+  <rect x="439" y="360" width="44" height="14" rx="7" fill="rgba(255,255,255,0.12)"/>
+  <text x="461" y="370" text-anchor="middle" font-family="system-ui" font-size="6.5" fill="rgba(255,255,255,0.7)" font-weight="600">+3 more</text>
+
+  <!-- Home indicator -->
+  <rect x="378" y="412" width="50" height="4" rx="2" fill="rgba(255,255,255,0.25)"/>
+
+  <!-- ── Right side: Text content ── -->
+  <!-- Featured badge -->
+  <rect x="520" y="100" width="90" height="22" rx="11" fill="#07ac4b" opacity="0.9"/>
+  <text x="565" y="115" text-anchor="middle" font-family="system-ui" font-size="9" fill="white" font-weight="700" letter-spacing="0.5">★ FEATURED</text>
+
+  <!-- Title -->
+  <text x="520" y="155" font-family="system-ui,-apple-system,sans-serif" font-weight="900" font-size="28" fill="white" letter-spacing="-0.8">Moz Net</text>
+  <text x="520" y="187" font-family="system-ui,-apple-system,sans-serif" font-weight="900" font-size="28" fill="#07ac4b" letter-spacing="-0.8">Salary</text>
+
+  <!-- Description -->
+  <text x="520" y="218" font-family="system-ui" font-size="10.5" fill="rgba(255,255,255,0.55)" font-weight="400">Salary calculator for Mozambican</text>
+  <text x="520" y="232" font-family="system-ui" font-size="10.5" fill="rgba(255,255,255,0.55)" font-weight="400">workers. IRPS, INSS, 6 languages,</text>
+  <text x="520" y="246" font-family="system-ui" font-size="10.5" fill="rgba(255,255,255,0.55)" font-weight="400">biometric lock, fully offline.</text>
+
+  <!-- Tech tags -->
+  <rect x="520" y="265" width="90" height="20" rx="10" fill="rgba(7,172,75,0.15)" stroke="rgba(7,172,75,0.3)" stroke-width="1"/>
+  <text x="565" y="279" text-anchor="middle" font-family="system-ui" font-size="9" fill="#07ac4b" font-weight="600">React Native</text>
+
+  <rect x="618" y="265" width="42" height="20" rx="10" fill="rgba(7,172,75,0.15)" stroke="rgba(7,172,75,0.3)" stroke-width="1"/>
+  <text x="639" y="279" text-anchor="middle" font-family="system-ui" font-size="9" fill="#07ac4b" font-weight="600">Expo</text>
+
+  <rect x="520" y="291" width="70" height="20" rx="10" fill="rgba(7,172,75,0.15)" stroke="rgba(7,172,75,0.3)" stroke-width="1"/>
+  <text x="555" y="305" text-anchor="middle" font-family="system-ui" font-size="9" fill="#07ac4b" font-weight="600">TypeScript</text>
+
+  <rect x="598" y="291" width="58" height="20" rx="10" fill="rgba(7,172,75,0.15)" stroke="rgba(7,172,75,0.3)" stroke-width="1"/>
+  <text x="627" y="305" text-anchor="middle" font-family="system-ui" font-size="9" fill="#07ac4b" font-weight="600">Zustand</text>
+
+  <!-- Platform icons -->
+  <text x="520" y="345" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.3)" font-weight="600" letter-spacing="0.3">Available on</text>
+  <rect x="520" y="354" width="66" height="22" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="553" y="369" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.6)" font-weight="600">App Store</text>
+  <rect x="593" y="354" width="76" height="22" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="631" y="369" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.6)" font-weight="600">Play Store</text>
+</svg>

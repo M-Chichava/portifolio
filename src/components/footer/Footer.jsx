@@ -4,7 +4,7 @@ import './Footer.css'
 const Footer = () => {
     const linkeidin = "https://linkedin.com/in/marcos-chichava-bs321631"
     const twitter = "https://twitter.com/marcos_chichava"
-    const instagram = "https://www.instagram.com/chichava.marcos/?hl=en"
+    const instagram = "https://www.instagram.com/mfchichava/?hl=en"
 
   return (
     <footer className="footer">
