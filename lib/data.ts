@@ -102,50 +102,32 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'Moz Net Salary',
+    title: 'Moz Net Salary - Mobile App',
     description: 'Salary calculator for Mozambican workers. Calculates IRPS & INSS in real time. 6 languages, biometric lock, fully offline.',
     image: '/portifolio/assets/moznetsalary.svg',
     tags: ['React Native', 'Expo', 'TypeScript', 'Zustand'],
     category: 'mobile',
-    url: 'https://m-chichava.github.io/portifolio/',
+    url: '',
     featured: true,
   },
   {
     id: 2,
-    title: 'Everest.co.mz',
-    description: 'Full-featured e-commerce and services web platform built for the Mozambican market.',
-    image: '/portifolio/assets/everest.svg',
+    title: 'Moz Net Salary Enterprise - Web App',
+    description: 'Enterprise-grade salary management platform tailored for Mozambique, supporting net salary calculations, tax compliance, payroll automation, and secure employee data management.',
+    image: '/portifolio/assets/moz-net-salary-web.png',
     tags: ['React', 'TypeScript', '.NET API', 'SQL Server'],
     category: 'web',
-    url: 'https://everest.co.mz/',
+    url: '',
   },
   {
     id: 3,
-    title: 'CTA — SME Platform',
-    description: 'Enterprise platform supporting small and medium enterprises with data management, reporting, and Angular Micro Frontend architecture.',
-    image: '/portifolio/assets/cta.svg',
-    tags: ['Angular', 'NgRx', '.NET', 'SQL Server'],
-    category: 'web',
-    url: 'https://ctabasededados.co.mz/',
-  },
-  {
-    id: 4,
-    title: 'Admin Dashboard',
-    description: 'Responsive analytics dashboard with role management, real-time KPIs and data visualization for enterprise use.',
-    image: '/portifolio/assets/dashboard.svg',
+    title: 'Restaurant Management System',
+    description: 'Comprehensive restaurant management system with POS integration, order tracking, inventory control, staff management, and real-time reporting to streamline operations.',
+    image: '/portifolio/assets/restaurant-management.png',
     tags: ['React', 'TypeScript', '.NET API', 'SQL Server'],
     category: 'web',
-    url: '#',
-  },
-  {
-    id: 5,
-    title: 'Microcredit — UI Design',
-    description: 'Complete UI/UX design for a microcredit mobile application, from wireframes to high-fidelity Figma prototype.',
-    image: '/portifolio/assets/microcredit.svg',
-    tags: ['Figma', 'UI/UX', 'Design System', 'Prototyping'],
-    category: 'design',
-    url: 'https://www.figma.com/file/8dxfBP16AZkqBiSXSoiCqu/MICROCREDITO?node-id=5-1083',
-  },
+    url: '',
+  }
 ]
 
 export const projectFilters = ['All', 'Mobile', 'Web', 'Design']
@@ -177,12 +159,6 @@ export const services = [
   },
 ]
 
-export const education = [
-  { title: 'UX Expert Certification',   institution: 'Udacity',         period: '2023',        left: true  },
-  { title: 'Scrum Master Certification', institution: 'Udemy',           period: '2022',        left: false },
-  { title: 'Web API Development',        institution: 'XP Educação',     period: '2021',        left: true  },
-  { title: 'Software Engineering',       institution: 'Eduardo Mondlane University', period: '2017–2021', left: false },
-]
 
 export const experience = [
   {
@@ -209,4 +185,12 @@ export const experience = [
     period:      '02/2021 – 06/2021',
     left:        false,
   },
+]
+
+
+export const education = [
+  { title: 'UX Expert Certification',   institution: 'Udacity',         period: '2023',        left: true  },
+  { title: 'Scrum Master Certification', institution: 'Udemy',           period: '2022',        left: false },
+  { title: 'Web API Development',        institution: 'XP Educação',     period: '2021',        left: true  },
+  { title: 'Software Engineering',       institution: 'Eduardo Mondlane University', period: '2017–2021', left: false },
 ]

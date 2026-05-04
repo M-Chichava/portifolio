@@ -53,7 +53,7 @@ export default function Qualifications() {
 
         {/* Tabs */}
         <div className="flex justify-center gap-3 mb-10">
-          {(['education', 'experience'] as const).map((t) => (
+          {(['experience', 'education'] as const).map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)}
@@ -63,7 +63,7 @@ export default function Qualifications() {
                   : 'card text-zinc-600 dark:text-zinc-400 hover:border-brand/40 hover:text-brand'
               }`}
             >
-              {t === 'education' ? <GraduationCap size={16} /> : <Briefcase size={16} />}
+              {t === 'experience' ? <Briefcase size={16} /> : <GraduationCap size={16} />}
               {t.charAt(0).toUpperCase() + t.slice(1)}
             </button>
           ))}
