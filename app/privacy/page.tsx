@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Moz Net Salary',
-  description: 'Privacy policy for the Moz Net Salary mobile application.',
+  title: 'Privacy Policy | Mz Salário',
+  description: 'Privacy policy for the Mz Salário mobile application.',
 }
 
 export default function PrivacyPage() {
@@ -17,7 +17,7 @@ export default function PrivacyPage() {
             ← Back to Portfolio
           </Link>
           <div className="inline-flex items-center gap-2 bg-brand/10 border border-brand/20 text-brand text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-4">
-            Moz Net Salary
+            Mz Salário
           </div>
           <h1 className="text-4xl font-black text-zinc-900 dark:text-white tracking-tight mb-3">
             Privacy Policy
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
           <section>
             <h2 className="text-xl font-bold text-zinc-900 dark:text-white mb-3">Overview</h2>
             <p>
-              Moz Net Salary (&quot;the App&quot;) is a salary calculator for Mozambican workers developed by Marcos Chichava.
+              Mz Salário (&quot;the App&quot;) is a salary calculator for Mozambican workers developed by Marcos Chichava.
               This Privacy Policy explains how the App handles information. In summary: <strong className="text-zinc-900 dark:text-white">the App collects no personal data.</strong>
             </p>
           </section>

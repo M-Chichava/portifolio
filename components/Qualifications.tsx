@@ -35,8 +35,8 @@ function TimelineItem({ item, index }: { item: Item; index: number }) {
 }
 
 export default function Qualifications() {
-  const [tab, setTab] = useState<'education' | 'experience'>('education')
-  const items = tab === 'education' ? education : experience
+  const [tab, setTab] = useState<'education' | 'experience'>('experience')
+  const items = tab === 'experience' ? experience : education
 
   return (
     <section id="qualifications" className="section bg-zinc-50 dark:bg-[#09100b]">

@@ -15,12 +15,13 @@ const Qualification = () => {
 
         <div className="qualification__container container">
           <div className="qualification__tabs">
+             <div className="qualification__button button--flex" onClick={ () => toggleTab(2) } >
+                <i className="uil uil-briefcase-alt qualification__icon"></i> {" "} Experience
+            </div>  
             <div className="qualification__button qualification__active button--flex" onClick={ () => toggleTab(1) } >
                 <i className="uil uil-graduation-cap qualification__icon"></i> Education
             </div>      
-            <div className="qualification__button button--flex" onClick={ () => toggleTab(2) } >
-                <i className="uil uil-briefcase-alt qualification__icon"></i> {" "} Experience
-            </div>      
+               
           </div>
 
           <div className="qualification__sections">
