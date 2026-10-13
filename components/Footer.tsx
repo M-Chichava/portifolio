@@ -1,8 +1,11 @@
+'use client'
 import Link from 'next/link'
 import { Github, Linkedin, Instagram, MessageCircle } from 'lucide-react'
 import { personal } from '@/lib/data'
+import { useLang } from '@/components/LanguageProvider'
+import type { Dict } from '@/lib/translations'
 
-const NAV = ['About', 'Skills', 'Services', 'Work', 'Contact']
+const NAV: (keyof Dict['nav'])[] = ['about', 'skills', 'services', 'work', 'contact']
 
 const SOCIALS = [
   { icon: Github,        href: personal.github,    label: 'GitHub'    },
@@ -12,6 +15,7 @@ const SOCIALS = [
 ]
 
 export default function Footer() {
+  const { t } = useLang()
   return (
     <footer className="bg-zinc-900 dark:bg-[#060d07] border-t border-zinc-800 dark:border-[#1c2e20]">
       <div className="max-w-6xl mx-auto px-6 py-12">
@@ -23,22 +27,22 @@ export default function Footer() {
             <p className="text-lg font-black text-white tracking-tight">
               <span className="text-brand">M</span>Chichava
             </p>
-            <p className="text-zinc-500 text-xs mt-1">FullStack & Mobile Developer</p>
+            <p className="text-zinc-500 text-xs mt-1">{t.footer.tagline}</p>
           </div>
 
           {/* Nav links */}
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2">
             {NAV.map((item) => (
-              <a
+              <Link
                 key={item}
-                href={`#${item.toLowerCase()}`}
+                href={`/#${item}`}
                 className="text-zinc-500 hover:text-brand text-sm font-medium transition-colors"
               >
-                {item}
-              </a>
+                {t.nav[item]}
+              </Link>
             ))}
             <Link href="/privacy" className="text-zinc-500 hover:text-brand text-sm font-medium transition-colors">
-              Privacy Policy
+              {t.footer.privacy}
             </Link>
           </nav>
 

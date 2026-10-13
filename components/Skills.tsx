@@ -1,7 +1,8 @@
 'use client'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { skillCategories } from '@/lib/data'
+import { skillCategories, skillLevels } from '@/lib/data'
+import { useLang } from '@/components/LanguageProvider'
 
 const LEVEL_COLOR: Record<string, string> = {
   Advanced:     'bg-brand/15 text-brand border-brand/25',
@@ -11,6 +12,7 @@ const LEVEL_COLOR: Record<string, string> = {
 
 export default function Skills() {
   const [active, setActive] = useState(0)
+  const { t, tr } = useLang()
 
   return (
     <section id="skills" className="section bg-zinc-50 dark:bg-[#09100b]">
@@ -22,8 +24,8 @@ export default function Skills() {
           viewport={{ once: true }} transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <p className="section-subtitle">What I know</p>
-          <h2 className="section-title">Skills</h2>
+          <p className="section-subtitle">{t.skills.subtitle}</p>
+          <h2 className="section-title">{t.skills.title}</h2>
         </motion.div>
 
         {/* Category tabs */}
@@ -34,7 +36,7 @@ export default function Skills() {
         >
           {skillCategories.map((cat, i) => (
             <button
-              key={cat.label}
+              key={cat.label.en}
               onClick={() => setActive(i)}
               className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${
                 active === i
@@ -42,7 +44,7 @@ export default function Skills() {
                   : 'bg-white dark:bg-[#0f1912] border border-zinc-200 dark:border-[#1c2e20] text-zinc-600 dark:text-zinc-400 hover:border-brand/40 hover:text-brand'
               }`}
             >
-              {cat.label}
+              {tr(cat.label)}
             </button>
           ))}
         </motion.div>
@@ -59,7 +61,7 @@ export default function Skills() {
           >
             <div className="card p-6 md:p-8">
               <h3 className="text-lg font-bold text-zinc-900 dark:text-white mb-6">
-                {skillCategories[active].label}
+                {tr(skillCategories[active].label)}
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {skillCategories[active].skills.map((skill, i) => (
@@ -75,7 +77,7 @@ export default function Skills() {
                       <span className="font-semibold text-sm text-zinc-800 dark:text-zinc-100">{skill.name}</span>
                     </div>
                     <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${LEVEL_COLOR[skill.level] ?? LEVEL_COLOR.Beginner}`}>
-                      {skill.level}
+                      {tr(skillLevels[skill.level])}
                     </span>
                   </motion.div>
                 ))}

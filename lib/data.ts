@@ -1,9 +1,18 @@
+import type { L } from './translations'
+
 export const personal = {
   name:      'Marcos Chichava',
-  role:      'Software Engineer',
-  roles:     ['Software Engineer', 'FullStack Developer', 'Mobile Developer'],
-  bio:       'Software Engineer at Maputo Port Development Company with 5+ years building enterprise-grade web and mobile applications. Specialized in Angular, .NET, React Native and Micro Frontend Architecture.',
-  location:  'Maputo, Mozambique',
+  role:      { en: 'Software Engineer', pt: 'Engenheiro de Software' } as L,
+  roles: [
+    { en: 'Software Engineer',   pt: 'Engenheiro de Software'    },
+    { en: 'FullStack Developer', pt: 'Desenvolvedor FullStack'   },
+    { en: 'Mobile Developer',    pt: 'Desenvolvedor Mobile'      },
+  ] as L[],
+  bio: {
+    en: 'Software Engineer at Maputo Port Development Company with 5+ years building enterprise-grade web and mobile applications. Specialized in Angular, .NET, React Native and Micro Frontend Architecture.',
+    pt: 'Engenheiro de Software na Maputo Port Development Company com mais de 5 anos a desenvolver aplicações web e móveis de nível empresarial. Especializado em Angular, .NET, React Native e Arquitectura Micro Frontend.',
+  } as L,
+  location:  { en: 'Maputo, Mozambique', pt: 'Maputo, Moçambique' } as L,
   email:     'chichavapro@gmail.com',
   phone:     '+258 846-970-987',
   whatsapp:  'https://api.whatsapp.com/send?phone=258846970987&text=Hello!',
@@ -15,14 +24,22 @@ export const personal = {
 }
 
 export const stats = [
-  { value: '5+',  label: 'Years of Experience' },
-  { value: '15+', label: 'Projects Completed'  },
-  { value: '20+', label: 'Technologies'         },
+  { value: '5+',  label: { en: 'Years of Experience', pt: 'Anos de Experiência'  } as L },
+  { value: '15+', label: { en: 'Projects Completed',  pt: 'Projectos Concluídos' } as L },
+  { value: '20+', label: { en: 'Technologies',        pt: 'Tecnologias'          } as L },
 ]
 
-export const skillCategories = [
+export type SkillLevel = 'Advanced' | 'Intermediate' | 'Beginner'
+
+export const skillLevels: Record<SkillLevel, L> = {
+  Advanced:     { en: 'Advanced',     pt: 'Avançado'      },
+  Intermediate: { en: 'Intermediate', pt: 'Intermédio'    },
+  Beginner:     { en: 'Beginner',     pt: 'Iniciante'     },
+}
+
+export const skillCategories: { label: L; skills: { name: string; level: SkillLevel }[] }[] = [
   {
-    label: 'Frontend',
+    label: { en: 'Frontend', pt: 'Frontend' },
     skills: [
       { name: 'Angular',     level: 'Advanced'     },
       { name: 'NgRx Store',  level: 'Advanced'     },
@@ -37,7 +54,7 @@ export const skillCategories = [
     ],
   },
   {
-    label: 'Mobile',
+    label: { en: 'Mobile', pt: 'Mobile' },
     skills: [
       { name: 'React Native',   level: 'Advanced'     },
       { name: 'Expo',           level: 'Advanced'     },
@@ -46,7 +63,7 @@ export const skillCategories = [
     ],
   },
   {
-    label: 'Backend',
+    label: { en: 'Backend', pt: 'Backend' },
     skills: [
       { name: '.NET Core / C#',   level: 'Advanced'     },
       { name: '.NET Framework',   level: 'Advanced'     },
@@ -57,7 +74,7 @@ export const skillCategories = [
     ],
   },
   {
-    label: 'Architecture',
+    label: { en: 'Architecture', pt: 'Arquitectura' },
     skills: [
       { name: 'Micro Frontend',   level: 'Advanced'     },
       { name: 'NgRx / Flux',      level: 'Advanced'     },
@@ -67,7 +84,7 @@ export const skillCategories = [
     ],
   },
   {
-    label: 'Database',
+    label: { en: 'Database', pt: 'Bases de Dados' },
     skills: [
       { name: 'SQL Server',  level: 'Advanced'     },
       { name: 'PostgreSQL',  level: 'Intermediate' },
@@ -76,7 +93,7 @@ export const skillCategories = [
     ],
   },
   {
-    label: 'Tools & DevOps',
+    label: { en: 'Tools & DevOps', pt: 'Ferramentas & DevOps' },
     skills: [
       { name: 'Git / GitHub',  level: 'Advanced'     },
       { name: 'Docker',        level: 'Advanced' },
@@ -87,13 +104,15 @@ export const skillCategories = [
   },
 ]
 
+export type ProjectCategory = 'mobile' | 'web' | 'design'
+
 export type Project = {
   id: number
   title: string
-  description: string
+  description: L
   image: string
   tags: string[]
-  category: string
+  category: ProjectCategory
   url: string
   github?: string
   featured?: boolean
@@ -103,7 +122,10 @@ export const projects: Project[] = [
   {
     id: 1,
     title: 'Moz Net Salary - Mobile App',
-    description: 'Salary calculator for Mozambican workers. Calculates IRPS & INSS in real time. 6 languages, biometric lock, fully offline.',
+    description: {
+      en: 'Salary calculator for Mozambican workers. Calculates IRPS & INSS in real time. 6 languages, biometric lock, fully offline.',
+      pt: 'Calculadora de salário para trabalhadores moçambicanos. Calcula IRPS e INSS em tempo real. 6 idiomas, bloqueio biométrico, totalmente offline.',
+    },
     image: '/portifolio/assets/moznetsalary.svg',
     tags: ['React Native', 'Expo', 'TypeScript', 'Zustand'],
     category: 'mobile',
@@ -113,7 +135,10 @@ export const projects: Project[] = [
   {
     id: 2,
     title: 'Moz Net Salary Enterprise - Web App',
-    description: 'Enterprise-grade salary management platform tailored for Mozambique, supporting net salary calculations, tax compliance, payroll automation, and secure employee data management.',
+    description: {
+      en: 'Enterprise-grade salary management platform tailored for Mozambique, supporting net salary calculations, tax compliance, payroll automation, and secure employee data management.',
+      pt: 'Plataforma empresarial de gestão salarial adaptada a Moçambique, com cálculo de salário líquido, conformidade fiscal, automatização de processamento salarial e gestão segura de dados dos colaboradores.',
+    },
     image: '/portifolio/assets/moz-net-salary-web.png',
     tags: ['React', 'TypeScript', '.NET API', 'SQL Server'],
     category: 'web',
@@ -122,7 +147,10 @@ export const projects: Project[] = [
   {
     id: 3,
     title: 'Restaurant Management System',
-    description: 'Comprehensive restaurant management system with POS integration, order tracking, inventory control, staff management, and real-time reporting to streamline operations.',
+    description: {
+      en: 'Comprehensive restaurant management system with POS integration, order tracking, inventory control, staff management, and real-time reporting to streamline operations.',
+      pt: 'Sistema completo de gestão de restaurantes com integração POS, acompanhamento de pedidos, controlo de inventário, gestão de pessoal e relatórios em tempo real para optimizar as operações.',
+    },
     image: '/portifolio/assets/restaurant-management.png',
     tags: ['React', 'TypeScript', '.NET API', 'SQL Server'],
     category: 'web',
@@ -130,67 +158,105 @@ export const projects: Project[] = [
   }
 ]
 
-export const projectFilters = ['All', 'Mobile', 'Web', 'Design']
+export const projectFilters: ('all' | ProjectCategory)[] = ['all', 'mobile', 'web', 'design']
 
-export const services = [
+export const services: { icon: string; title: L; description: L; items: L[] }[] = [
   {
     icon: 'Smartphone',
-    title: 'Mobile App Development',
-    description: 'Cross-platform iOS & Android apps with React Native and Expo SDK.',
-    items: ['React Native + Expo', 'App Store & Play Store submission', 'Offline-first architecture', 'Biometric & secure storage'],
+    title: { en: 'Mobile App Development', pt: 'Desenvolvimento Mobile' },
+    description: {
+      en: 'Cross-platform iOS & Android apps with React Native and Expo SDK.',
+      pt: 'Aplicações multiplataforma iOS e Android com React Native e Expo SDK.',
+    },
+    items: [
+      { en: 'React Native + Expo',               pt: 'React Native + Expo' },
+      { en: 'App Store & Play Store submission', pt: 'Publicação na App Store e Play Store' },
+      { en: 'Offline-first architecture',        pt: 'Arquitectura offline-first' },
+      { en: 'Biometric & secure storage',        pt: 'Biometria e armazenamento seguro' },
+    ],
   },
   {
     icon: 'Globe',
-    title: 'Web App Development',
-    description: 'Scalable enterprise web applications with Angular, React and Micro Frontend architecture.',
-    items: ['Angular + NgRx', 'Micro Frontend Architecture', 'Next.js / React', 'REST API design'],
+    title: { en: 'Web App Development', pt: 'Desenvolvimento Web' },
+    description: {
+      en: 'Scalable enterprise web applications with Angular, React and Micro Frontend architecture.',
+      pt: 'Aplicações web empresariais escaláveis com Angular, React e arquitectura Micro Frontend.',
+    },
+    items: [
+      { en: 'Angular + NgRx',              pt: 'Angular + NgRx' },
+      { en: 'Micro Frontend Architecture', pt: 'Arquitectura Micro Frontend' },
+      { en: 'Next.js / React',             pt: 'Next.js / React' },
+      { en: 'REST API design',             pt: 'Desenho de APIs REST' },
+    ],
   },
   {
     icon: 'Palette',
-    title: 'UI/UX Design',
-    description: 'User-centered design balancing aesthetics with usability and accessibility.',
-    items: ['Figma prototyping', 'Design systems', 'Wireframing & mockups', 'User experience audits'],
+    title: { en: 'UI/UX Design', pt: 'Design UI/UX' },
+    description: {
+      en: 'User-centered design balancing aesthetics with usability and accessibility.',
+      pt: 'Design centrado no utilizador, equilibrando estética, usabilidade e acessibilidade.',
+    },
+    items: [
+      { en: 'Figma prototyping',          pt: 'Prototipagem em Figma' },
+      { en: 'Design systems',             pt: 'Design systems' },
+      { en: 'Wireframing & mockups',      pt: 'Wireframes e mockups' },
+      { en: 'User experience audits',     pt: 'Auditorias de experiência do utilizador' },
+    ],
   },
   {
     icon: 'Server',
-    title: 'Backend Development',
-    description: 'Robust server-side solutions with .NET Core, .NET Framework and Web API.',
-    items: ['.NET Core / Web API', '.NET Framework / VB.NET', 'RESTful services', 'Database design & optimization'],
+    title: { en: 'Backend Development', pt: 'Desenvolvimento Backend' },
+    description: {
+      en: 'Robust server-side solutions with .NET Core, .NET Framework and Web API.',
+      pt: 'Soluções de servidor robustas com .NET Core, .NET Framework e Web API.',
+    },
+    items: [
+      { en: '.NET Core / Web API',            pt: '.NET Core / Web API' },
+      { en: '.NET Framework / VB.NET',        pt: '.NET Framework / VB.NET' },
+      { en: 'RESTful services',               pt: 'Serviços RESTful' },
+      { en: 'Database design & optimization', pt: 'Desenho e optimização de bases de dados' },
+    ],
   },
 ]
 
+export type TimelineEntry = {
+  title:       L
+  institution: string
+  /** Use the literal "Present" for ongoing entries; it is translated at render time */
+  period:      string
+  left:        boolean
+}
 
-export const experience = [
+export const experience: TimelineEntry[] = [
   {
-    title:       'Software Engineer',
+    title:       { en: 'Software Engineer', pt: 'Engenheiro de Software' },
     institution: 'Maputo Port Development Company',
     period:      '11/2025 – Present',
     left:        true,
   },
   {
-    title:       'Software Developer',
+    title:       { en: 'Software Developer', pt: 'Desenvolvedor de Software' },
     institution: 'Millennium BIM',
     period:      '06/2022 – 11/2025',
     left:        false,
   },
   {
-    title:       'Web Developer & Designer',
+    title:       { en: 'Web Developer & Designer', pt: 'Desenvolvedor Web & Designer' },
     institution: 'Experience & Technology',
     period:      '01/2022 – 06/2022',
     left:        true,
-  }, 
+  },
   {
-    title:       'Web FrontEnd Developer',
+    title:       { en: 'Web FrontEnd Developer', pt: 'Desenvolvedor Web FrontEnd' },
     institution: 'Espaço de Inovação - UEM',
     period:      '02/2021 – 06/2021',
     left:        false,
   },
 ]
 
-
-export const education = [
-  { title: 'UX Expert Certification',   institution: 'Udacity',         period: '2023',        left: true  },
-  { title: 'Scrum Master Certification', institution: 'Udemy',           period: '2022',        left: false },
-  { title: 'Web API Development',        institution: 'XP Educação',     period: '2021',        left: true  },
-  { title: 'Software Engineering',       institution: 'Eduardo Mondlane University', period: '2017–2021', left: false },
+export const education: TimelineEntry[] = [
+  { title: { en: 'UX Expert Certification',    pt: 'Certificação UX Expert'      }, institution: 'Udacity',     period: '2023', left: true },
+  { title: { en: 'Scrum Master Certification', pt: 'Certificação Scrum Master'   }, institution: 'Udemy',       period: '2022', left: false },
+  { title: { en: 'Web API Development',        pt: 'Desenvolvimento de Web APIs' }, institution: 'XP Educação', period: '2021', left: true },
+  { title: { en: 'Software Engineering',       pt: 'Engenharia Informática'      }, institution: 'Eduardo Mondlane University', period: '2017–2021', left: false },
 ]

@@ -4,16 +4,18 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ExternalLink, Github, Star } from 'lucide-react'
 import { projects, projectFilters } from '@/lib/data'
+import { useLang } from '@/components/LanguageProvider'
 
 export default function Projects() {
-  const [filter, setFilter] = useState('All')
+  const [filter, setFilter] = useState<(typeof projectFilters)[number]>('all')
+  const { t, tr } = useLang()
 
-  const filtered = filter === 'All'
+  const filtered = filter === 'all'
     ? projects
-    : projects.filter((p) => p.category.toLowerCase() === filter.toLowerCase())
+    : projects.filter((p) => p.category === filter)
 
   const linkLabel = (url: string) =>
-    url.includes('play.google.com') ? 'Get it on Google Play' : 'Live demo'
+    url.includes('play.google.com') ? t.projects.googlePlay : t.projects.liveDemo
 
   return (
     <section id="work" className="section bg-zinc-50 dark:bg-[#09100b]">
@@ -25,8 +27,8 @@ export default function Projects() {
           viewport={{ once: true }} transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <p className="section-subtitle">My recent work</p>
-          <h2 className="section-title">Featured Projects</h2>
+          <p className="section-subtitle">{t.projects.subtitle}</p>
+          <h2 className="section-title">{t.projects.title}</h2>
         </motion.div>
 
         {/* Filters */}
@@ -45,7 +47,7 @@ export default function Projects() {
                   : 'bg-white dark:bg-[#0f1912] border border-zinc-200 dark:border-[#1c2e20] text-zinc-600 dark:text-zinc-400 hover:border-brand/40 hover:text-brand'
               }`}
             >
-              {f}
+              {t.projects.filters[f]}
             </button>
           ))}
         </motion.div>
@@ -92,7 +94,7 @@ export default function Projects() {
                   {project.featured && (
                     <div className="absolute top-3 left-3 flex items-center gap-1 bg-brand text-white text-xs font-bold px-2.5 py-1 rounded-full">
                       <Star size={10} fill="white" />
-                      Featured
+                      {t.projects.featured}
                     </div>
                   )}
 
@@ -118,7 +120,7 @@ export default function Projects() {
                 {/* Body */}
                 <div className="p-5">
                   <h3 className="font-bold text-zinc-900 dark:text-white mb-1.5">{project.title}</h3>
-                  <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed mb-4">{project.description}</p>
+                  <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed mb-4">{tr(project.description)}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {project.tags.map((tag) => (
                       <span key={tag} className="skill-badge text-xs">{tag}</span>

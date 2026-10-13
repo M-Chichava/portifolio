@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import { LanguageProvider } from '@/components/LanguageProvider'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ScrollUp from '@/components/ScrollUp'
@@ -29,10 +30,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <body>
         <ThemeProvider>
-          <Header />
-          {children}
-          <Footer />
-          <ScrollUp />
+          <LanguageProvider>
+            <Header />
+            {children}
+            <Footer />
+            <ScrollUp />
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

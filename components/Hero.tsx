@@ -1,9 +1,10 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Instagram, MessageCircle, Download, ArrowRight } from 'lucide-react'
 import { personal } from '@/lib/data'
+import { useLang } from '@/components/LanguageProvider'
 
 function useTyping(words: string[], speed = 90, deleteSpeed = 50, pause = 2200) {
   const [text, setText]         = useState('')
@@ -51,7 +52,9 @@ const fade = (delay = 0) => ({
 })
 
 export default function Hero() {
-  const typed = useTyping(personal.roles)
+  const { t, tr } = useLang()
+  const roles = useMemo(() => personal.roles.map(tr), [tr])
+  const typed = useTyping(roles)
 
   return (
     <section
@@ -73,11 +76,11 @@ export default function Hero() {
 
             <motion.div {...fade(0.1)} className="inline-flex items-center gap-2 bg-brand/10 border border-brand/20 text-brand text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full">
               <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
-              Available for projects
+              {t.hero.available}
             </motion.div>
 
             <motion.div {...fade(0.2)}>
-              <p className="text-zinc-500 dark:text-zinc-400 font-medium mb-1">Hello, I&apos;m 👋</p>
+              <p className="text-zinc-500 dark:text-zinc-400 font-medium mb-1">{t.hero.hello}</p>
               <h1 className="text-5xl md:text-6xl font-black text-zinc-900 dark:text-white tracking-tight leading-none">
                 Marcos<br />
                 <span className="text-brand">Chichava</span>
@@ -90,16 +93,16 @@ export default function Hero() {
             </motion.div>
 
             <motion.p {...fade(0.4)} className="text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-md">
-              {personal.bio}
+              {tr(personal.bio)}
             </motion.p>
 
             <motion.div {...fade(0.5)} className="flex flex-wrap gap-3">
               <a href={personal.cv} download className="btn-primary">
                 <Download size={16} />
-                Download CV
+                {t.common.downloadCv}
               </a>
               <a href="#contact" className="btn-outline">
-                Contact Me
+                {t.hero.contact}
                 <ArrowRight size={16} />
               </a>
             </motion.div>
@@ -150,7 +153,7 @@ export default function Hero() {
                               bg-white dark:bg-[#0f1912] border border-zinc-200 dark:border-[#1c2e20]
                               shadow-lg px-4 py-2 rounded-full whitespace-nowrap">
                 <span className="text-xs">📍</span>
-                <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-200">Maputo, Mozambique</span>
+                <span className="text-xs font-semibold text-zinc-700 dark:text-zinc-200">{tr(personal.location)}</span>
               </div>
             </div>
           </motion.div>

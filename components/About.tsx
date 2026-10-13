@@ -3,10 +3,12 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Download, Award, Briefcase, Headphones } from 'lucide-react'
 import { personal, stats } from '@/lib/data'
+import { useLang } from '@/components/LanguageProvider'
 
 const STAT_ICONS = [Award, Briefcase, Headphones]
 
 export default function About() {
+  const { t, tr } = useLang()
   return (
     <section id="about" className="section bg-white dark:bg-[#0f1912]">
       <div className="container-custom px-4 md:px-6">
@@ -17,8 +19,8 @@ export default function About() {
           viewport={{ once: true }} transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <p className="section-subtitle">Get to know me</p>
-          <h2 className="section-title">About Me</h2>
+          <p className="section-subtitle">{t.about.subtitle}</p>
+          <h2 className="section-title">{t.about.title}</h2>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -42,7 +44,7 @@ export default function About() {
               {/* Years badge */}
               <div className="absolute -right-4 top-8 bg-brand text-white rounded-2xl px-4 py-3 shadow-lg shadow-brand/30 text-center">
                 <p className="text-2xl font-black leading-none">5+</p>
-                <p className="text-xs font-semibold opacity-90 mt-0.5 leading-tight">Years<br/>Exp.</p>
+                <p className="text-xs font-semibold opacity-90 mt-0.5 leading-tight">{t.about.yearsExp[0]}<br/>{t.about.yearsExp[1]}</p>
               </div>
             </div>
           </motion.div>
@@ -58,10 +60,10 @@ export default function About() {
               {stats.map((s, i) => {
                 const Icon = STAT_ICONS[i]
                 return (
-                  <div key={s.label} className="card p-4 text-center hover:border-brand/40 transition-colors">
+                  <div key={s.value} className="card p-4 text-center hover:border-brand/40 transition-colors">
                     <Icon size={18} className="text-brand mx-auto mb-2" />
                     <p className="text-2xl font-black text-zinc-900 dark:text-white">{s.value}</p>
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 leading-tight">{s.label}</p>
+                    <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 leading-tight">{tr(s.label)}</p>
                   </div>
                 )
               })}
@@ -69,18 +71,16 @@ export default function About() {
 
             {/* Bio */}
             <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              {personal.bio}
+              {tr(personal.bio)}
             </p>
             <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Based in <span className="text-brand font-semibold">Maputo, Mozambique</span>, I work with
-              startups and businesses to deliver clean, maintainable code — from pixel-perfect frontends
-              to scalable APIs and cross-platform mobile apps.
+              {t.about.basedIn} <span className="text-brand font-semibold">{tr(personal.location)}</span>{t.about.extra}
             </p>
 
             {/* CV button */}
             <a href={personal.cv} download className="btn-primary inline-flex w-fit">
               <Download size={16} />
-              Download CV
+              {t.common.downloadCv}
             </a>
           </motion.div>
 

@@ -2,11 +2,11 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { GraduationCap, Briefcase, Calendar } from 'lucide-react'
-import { education, experience } from '@/lib/data'
+import { education, experience, type TimelineEntry } from '@/lib/data'
+import { useLang } from '@/components/LanguageProvider'
 
-type Item = { title: string; institution: string; period: string; left: boolean }
-
-function TimelineItem({ item, index }: { item: Item; index: number }) {
+function TimelineItem({ item, index }: { item: TimelineEntry; index: number }) {
+  const { t, tr } = useLang()
   return (
     <motion.div
       initial={{ opacity: 0, x: item.left ? -20 : 20 }}
@@ -15,11 +15,11 @@ function TimelineItem({ item, index }: { item: Item; index: number }) {
       className={`flex gap-4 ${item.left ? 'flex-row' : 'flex-row-reverse'}`}
     >
       <div className={`flex-1 card p-4 hover:border-brand/40 transition-colors ${item.left ? '' : 'text-right'}`}>
-        <h3 className="font-bold text-zinc-900 dark:text-white text-sm">{item.title}</h3>
+        <h3 className="font-bold text-zinc-900 dark:text-white text-sm">{tr(item.title)}</h3>
         <p className="text-brand text-xs font-semibold mt-0.5">{item.institution}</p>
         <div className={`flex items-center gap-1 mt-2 text-zinc-400 text-xs ${item.left ? '' : 'justify-end'}`}>
           <Calendar size={11} />
-          {item.period}
+          {item.period.replace('Present', t.common.present)}
         </div>
       </div>
 
@@ -36,7 +36,8 @@ function TimelineItem({ item, index }: { item: Item; index: number }) {
 
 export default function Qualifications() {
   const [tab, setTab] = useState<'education' | 'experience'>('experience')
-  const items = tab === 'experience' ? experience : education
+  const items: TimelineEntry[] = tab === 'experience' ? experience : education
+  const { t } = useLang()
 
   return (
     <section id="qualifications" className="section bg-zinc-50 dark:bg-[#09100b]">
@@ -47,24 +48,24 @@ export default function Qualifications() {
           viewport={{ once: true }} transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <p className="section-subtitle">My journey</p>
-          <h2 className="section-title">Qualifications</h2>
+          <p className="section-subtitle">{t.qualifications.subtitle}</p>
+          <h2 className="section-title">{t.qualifications.title}</h2>
         </motion.div>
 
         {/* Tabs */}
         <div className="flex justify-center gap-3 mb-10">
-          {(['experience', 'education'] as const).map((t) => (
+          {(['experience', 'education'] as const).map((key) => (
             <button
-              key={t}
-              onClick={() => setTab(t)}
+              key={key}
+              onClick={() => setTab(key)}
               className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 ${
-                tab === t
+                tab === key
                   ? 'bg-brand text-white shadow-md shadow-brand/25'
                   : 'card text-zinc-600 dark:text-zinc-400 hover:border-brand/40 hover:text-brand'
               }`}
             >
-              {t === 'experience' ? <Briefcase size={16} /> : <GraduationCap size={16} />}
-              {t.charAt(0).toUpperCase() + t.slice(1)}
+              {key === 'experience' ? <Briefcase size={16} /> : <GraduationCap size={16} />}
+              {t.qualifications[key]}
             </button>
           ))}
         </div>
@@ -78,7 +79,7 @@ export default function Qualifications() {
             className="max-w-2xl mx-auto space-y-2"
           >
             {items.map((item, i) => (
-              <TimelineItem key={item.title} item={item} index={i} />
+              <TimelineItem key={item.title.en} item={item} index={i} />
             ))}
           </motion.div>
         </AnimatePresence>
