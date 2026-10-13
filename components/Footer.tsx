@@ -17,7 +17,7 @@ const SOCIALS = [
 export default function Footer() {
   const { t } = useLang()
   return (
-    <footer className="bg-zinc-900 dark:bg-[#060d07] border-t border-zinc-800 dark:border-[#1c2e20]">
+    <footer className="print:hidden bg-zinc-900 dark:bg-[#060d07] border-t border-zinc-800 dark:border-[#1c2e20]">
       <div className="max-w-6xl mx-auto px-6 py-12">
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
@@ -43,6 +43,9 @@ export default function Footer() {
             ))}
             <Link href="/privacy" className="text-zinc-500 hover:text-brand text-sm font-medium transition-colors">
               {t.footer.privacy}
+            </Link>
+            <Link href="/cv" className="text-zinc-500 hover:text-brand text-sm font-medium transition-colors">
+              {t.nav.cv}
             </Link>
           </nav>
 

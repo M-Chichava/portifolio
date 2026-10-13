@@ -1,7 +1,8 @@
 'use client'
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Download, Award, Briefcase, Headphones } from 'lucide-react'
+import { Download, Award, Briefcase, Headphones, FileText } from 'lucide-react'
 import { personal, stats } from '@/lib/data'
 import { useLang } from '@/components/LanguageProvider'
 
@@ -77,11 +78,17 @@ export default function About() {
               {t.about.basedIn} <span className="text-brand font-semibold">{tr(personal.location)}</span>{t.about.extra}
             </p>
 
-            {/* CV button */}
-            <a href={personal.cv} download className="btn-primary inline-flex w-fit">
-              <Download size={16} />
-              {t.common.downloadCv}
-            </a>
+            {/* CV buttons */}
+            <div className="flex flex-wrap gap-3">
+              <a href={personal.cv} download className="btn-primary inline-flex w-fit">
+                <Download size={16} />
+                {t.common.downloadCv}
+              </a>
+              <Link href="/cv" className="btn-outline inline-flex w-fit">
+                <FileText size={16} />
+                {t.common.buildCv}
+              </Link>
+            </div>
           </motion.div>
 
         </div>

@@ -20,6 +20,7 @@ export const personal = {
   linkedin:  'https://linkedin.com/in/marcos-chichava-bs321631',
   instagram: 'https://www.instagram.com/mfchichava/',
   messenger: 'https://m.me/crypticalcoder',
+  website:   'https://m-chichava.github.io/portifolio/',
   cv:        '/portifolio/assets/Resume.pdf',
 }
 
@@ -227,7 +228,12 @@ export type TimelineEntry = {
   left:        boolean
 }
 
-export const experience: TimelineEntry[] = [
+export type ExperienceEntry = TimelineEntry & {
+  bullets?: L[]
+  tech?:    string[]
+}
+
+export const experience: ExperienceEntry[] = [
   {
     title:       { en: 'Software Engineer', pt: 'Engenheiro de Software' },
     institution: 'Maputo Port Development Company',
@@ -239,12 +245,46 @@ export const experience: TimelineEntry[] = [
     institution: 'Millennium BIM',
     period:      '06/2022 – 11/2025',
     left:        false,
+    bullets: [
+      {
+        en: 'Lead developer of the Crédito Nova Vida (CNV) management application, working with product owners to implement new business rules across the full credit lifecycle.',
+        pt: 'Desenvolvedor principal da aplicação de gestão do Crédito Nova Vida (CNV), em colaboração com os proprietários do produto na implementação de novas regras de negócio em todo o ciclo de vida do crédito.',
+      },
+      {
+        en: 'Automated the disbursement of airtime sold via IZI/SmartIZI to mobile operators (Vodacom, TMcel, Movitel) with Windows services that build reconciliation files and process payments.',
+        pt: 'Automatizei o desembolso de recargas vendidas via IZI/SmartIZI às operadoras (Vodacom, TMcel, Movitel) com serviços Windows que geram ficheiros de reconciliação e processam os pagamentos.',
+      },
+      {
+        en: 'Prototyped and built a new Angular SPA for BackOffice complaint management, replacing a slow legacy app and significantly reducing response times.',
+        pt: 'Prototipei e implementei uma nova SPA em Angular para gestão de reclamações no BackOffice, substituindo uma aplicação lenta e reduzindo significativamente os tempos de resposta.',
+      },
+      {
+        en: 'Automated the allocation of credit proposals to analysts based on availability and workload, balancing distribution and reducing manual effort.',
+        pt: 'Automatizei a alocação de propostas de crédito aos analistas com base na disponibilidade e fila de trabalho, equilibrando a distribuição e reduzindo o esforço manual.',
+      },
+      {
+        en: 'Delivered NUIB visibility in the IZI app, letting customers view their unique bank identification number.',
+        pt: 'Implementei a visualização do NUIB no IZI, permitindo aos clientes consultar o seu Número Único de Identificação Bancária.',
+      },
+      {
+        en: 'Built an RPA (UiPath) for certificate-expiry monitoring and a Python/Appium availability monitor for SmartIZI with real-time email alerts.',
+        pt: 'Criei uma RPA (UiPath) para monitoria de expiração de certificados e um monitor de disponibilidade do SmartIZI em Python/Appium com alertas por email em tempo real.',
+      },
+    ],
+    tech: ['C#', '.NET', '.NET Framework', 'Angular', 'NgRx', 'React + Vite', 'TypeScript', 'SQL Server', 'Azure', 'Jenkins', 'UiPath', 'Python'],
   },
   {
     title:       { en: 'Web Developer & Designer', pt: 'Desenvolvedor Web & Designer' },
     institution: 'Experience & Technology',
     period:      '01/2022 – 06/2022',
     left:        true,
+    bullets: [
+      {
+        en: 'Designed and implemented internal and external solutions: RESTful APIs with .NET/.NET Core (C#), Angular web apps, database design and requirements engineering.',
+        pt: 'Desenhei e implementei soluções internas e externas: APIs RESTful com .NET/.NET Core (C#), aplicações web em Angular, desenho de bases de dados e engenharia de requisitos.',
+      },
+    ],
+    tech: ['.NET Core', 'C#', 'Angular', 'NgRx', 'PostgreSQL', 'Clean Architecture', 'CQRS', 'Figma'],
   },
   {
     title:       { en: 'Web FrontEnd Developer', pt: 'Desenvolvedor Web FrontEnd' },
@@ -254,9 +294,30 @@ export const experience: TimelineEntry[] = [
   },
 ]
 
-export const education: TimelineEntry[] = [
-  { title: { en: 'UX Expert Certification',    pt: 'Certificação UX Expert'      }, institution: 'Udacity',     period: '2023', left: true },
-  { title: { en: 'Scrum Master Certification', pt: 'Certificação Scrum Master'   }, institution: 'Udemy',       period: '2022', left: false },
-  { title: { en: 'Web API Development',        pt: 'Desenvolvimento de Web APIs' }, institution: 'XP Educação', period: '2021', left: true },
-  { title: { en: 'Software Engineering',       pt: 'Engenharia Informática'      }, institution: 'Eduardo Mondlane University', period: '2017–2021', left: false },
+export type EducationEntry = TimelineEntry & { kind: 'degree' | 'cert' }
+
+export const education: EducationEntry[] = [
+  { title: { en: 'UX Expert Certification',    pt: 'Certificação UX Expert'      }, institution: 'Udacity',     period: '2023', left: true,  kind: 'cert' },
+  { title: { en: 'Scrum Master Certification', pt: 'Certificação Scrum Master'   }, institution: 'Udemy',       period: '2022', left: false, kind: 'cert' },
+  { title: { en: 'Web API Development',        pt: 'Desenvolvimento de Web APIs' }, institution: 'XP Educação', period: '2021', left: true,  kind: 'cert' },
+  { title: { en: 'Software Engineering',       pt: 'Engenharia Informática'      }, institution: 'Eduardo Mondlane University', period: '2017–2021', left: false, kind: 'degree' },
+]
+
+/** Additional courses shown only on the CV */
+export const certifications: { title: string; institution: string; period: string }[] = [
+  { title: 'Complete Microsoft SQL Server Database Administration', institution: 'Udemy', period: '2023' },
+  { title: 'Building Reports with SQL Server Reporting Services (SSRS)', institution: 'Udemy', period: '2023' },
+  { title: 'Creativity, Design Thinking and Innovation for Business', institution: 'Udemy', period: '2023' },
+  { title: 'Critical Thinking Strategies for Better Decisions', institution: 'Udemy', period: '2023' },
+  { title: 'CRM - Customer Relationship Management', institution: 'Udemy', period: '2023' },
+]
+
+export const softSkills: L[] = [
+  { en: 'Problem solving',               pt: 'Resolução de problemas'      },
+  { en: 'Solution-oriented',             pt: 'Foco na solução'             },
+  { en: 'Technical communication',       pt: 'Comunicação técnica'         },
+  { en: 'Cross-functional collaboration', pt: 'Colaboração interfuncional' },
+  { en: 'Ownership',                     pt: 'Sentido de propriedade'      },
+  { en: 'Adaptability',                  pt: 'Adaptabilidade'              },
+  { en: 'Fast learner',                  pt: 'Aprendizagem rápida'         },
 ]

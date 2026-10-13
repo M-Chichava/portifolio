@@ -71,3 +71,63 @@
            font-medium transition-colors duration-200 text-sm;
   }
 }
+
+/* ── CV document (always printed on white, independent of the site theme) ── */
+@layer components {
+  .cv-preview-frame {
+    @apply mx-auto w-fit;
+  }
+
+  .cv-doc {
+    @apply bg-white text-zinc-700 shadow-xl rounded-sm outline-none;
+    width: 210mm;
+    min-height: 297mm;
+    line-height: 1.45;
+    font-family: var(--font-inter), sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .cv-doc[contenteditable='true'] { @apply ring-2 ring-brand/40 cursor-text; }
+  .cv-doc a { color: inherit; text-decoration: none; }
+
+  .cv-pad  { padding: 14mm 15mm; }
+  .cv-side { padding: 12mm 7mm; }
+  .cv-main { padding: 12mm 10mm; }
+
+  .cv-name  { @apply font-black text-zinc-900 tracking-tight leading-none; font-size: 2.3em; }
+  .cv-role  { @apply font-semibold mt-[0.3em]; font-size: 1.15em; }
+  .cv-photo { @apply rounded-full object-cover object-top border-2; width: 6.5em; height: 6.5em; }
+
+  .cv-section + .cv-section { margin-top: 1.25em; }
+  .cv-heading {
+    @apply font-bold uppercase tracking-[0.12em] mb-[0.6em];
+    font-size: 0.85em;
+  }
+  .cv-classic .cv-heading { @apply border-b pb-[0.3em]; }
+  .cv-heading-side { @apply mb-[0.5em]; }
+
+  .cv-entry       { break-inside: avoid; }
+  .cv-entry-title { @apply font-bold text-zinc-900; font-size: 1.05em; }
+  .cv-entry-sub   { @apply font-semibold; font-size: 0.95em; }
+  .cv-text        { font-size: 0.95em; }
+  .cv-meta        { @apply text-zinc-500; font-size: 0.85em; }
+  .cv-chip        { @apply rounded-full text-zinc-700; font-size: 0.8em; padding: 0.15em 0.65em; }
+
+  .cv-list { @apply list-disc mt-[0.35em] space-y-[0.2em]; padding-left: 1.1em; font-size: 0.95em; }
+  .cv-list li::marker { color: theme('colors.zinc.400'); }
+}
+
+@media print {
+  @page { size: A4; margin: 12mm 0; }
+  @page :first { margin-top: 0; }
+
+  html, body { background: #fff !important; }
+  .cv-preview-frame { width: auto; margin: 0; }
+  .cv-doc {
+    box-shadow: none !important;
+    border-radius: 0;
+    width: 210mm;
+    min-height: 285mm; /* A4 minus the bottom page margin, so a one-page CV never spills */
+  }
+  .cv-doc[contenteditable='true'] { box-shadow: none; outline: none; --tw-ring-shadow: 0 0 #0000; }
+}
