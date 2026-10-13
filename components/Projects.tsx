@@ -12,6 +12,9 @@ export default function Projects() {
     ? projects
     : projects.filter((p) => p.category.toLowerCase() === filter.toLowerCase())
 
+  const linkLabel = (url: string) =>
+    url.includes('play.google.com') ? 'Get it on Google Play' : 'Live demo'
+
   return (
     <section id="work" className="section bg-zinc-50 dark:bg-[#09100b]">
       <div className="container-custom px-4 md:px-6">
@@ -94,11 +97,14 @@ export default function Projects() {
                   )}
 
                   {/* Hover overlay */}
+                  {(project.url || project.github) && (
                   <div className="absolute inset-0 bg-brand/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                    <a href={project.url} target="_blank" rel="noopener noreferrer"
-                       className="p-2.5 bg-white rounded-xl text-brand hover:scale-110 transition-transform">
-                      <ExternalLink size={18} />
-                    </a>
+                    {project.url && (
+                      <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={linkLabel(project.url)}
+                         className="p-2.5 bg-white rounded-xl text-brand hover:scale-110 transition-transform">
+                        <ExternalLink size={18} />
+                      </a>
+                    )}
                     {project.github && (
                       <a href={project.github} target="_blank" rel="noopener noreferrer"
                          className="p-2.5 bg-white rounded-xl text-brand hover:scale-110 transition-transform">
@@ -106,6 +112,7 @@ export default function Projects() {
                       </a>
                     )}
                   </div>
+                  )}
                 </div>
 
                 {/* Body */}
@@ -117,6 +124,13 @@ export default function Projects() {
                       <span key={tag} className="skill-badge text-xs">{tag}</span>
                     ))}
                   </div>
+                  {project.url && (
+                    <a href={project.url} target="_blank" rel="noopener noreferrer"
+                       className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-brand hover:underline">
+                      <ExternalLink size={14} />
+                      {linkLabel(project.url)}
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}

@@ -107,7 +107,7 @@ export const projects: Project[] = [
     image: '/portifolio/assets/moznetsalary.svg',
     tags: ['React Native', 'Expo', 'TypeScript', 'Zustand'],
     category: 'mobile',
-    url: '',
+    url: 'https://play.google.com/store/apps/details?id=com.chichavapro.mzsalary',
     featured: true,
   },
   {
@@ -117,7 +117,7 @@ export const projects: Project[] = [
     image: '/portifolio/assets/moz-net-salary-web.png',
     tags: ['React', 'TypeScript', '.NET API', 'SQL Server'],
     category: 'web',
-    url: '',
+    url: 'https://m-chichava.github.io/moz-net-salary/',
   },
   {
     id: 3,
