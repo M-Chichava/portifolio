@@ -2,7 +2,7 @@
 import { useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
-import { Mail, Phone, MessageCircle, Send, CheckCircle, AlertCircle } from 'lucide-react'
+import { Mail, Phone, Send, CheckCircle, AlertCircle } from 'lucide-react'
 import { personal } from '@/lib/data'
 import { useLang } from '@/components/LanguageProvider'
 
@@ -20,13 +20,6 @@ const CONTACT_ITEMS = [
     value: personal.phone,
     href: personal.whatsapp,
     color: 'bg-brand/10 text-brand',
-  },
-  {
-    icon: MessageCircle,
-    label: 'Messenger',
-    value: 'Marcos Chichava',
-    href: personal.messenger,
-    color: 'bg-violet-500/10 text-violet-500 dark:text-violet-400',
   },
 ]
 

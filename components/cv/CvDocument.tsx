@@ -199,7 +199,7 @@ export default function CvDocument({ settings, editable }: Props) {
 
   const photo = showPhoto && (
     /* eslint-disable-next-line @next/next/no-img-element */
-    <img src="/portifolio/assets/profile.jpg" alt={personal.name} className="cv-photo" style={{ borderColor: accent }} />
+    <img src="/assets/profile.jpg" alt={personal.name} className="cv-photo" style={{ borderColor: accent }} />
   )
 
   const contactList = (vertical: boolean) => (

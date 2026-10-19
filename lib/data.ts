@@ -13,15 +13,14 @@ export const personal = {
     pt: 'Engenheiro de Software na Maputo Port Development Company com mais de 5 anos a desenvolver aplicações web e móveis de nível empresarial. Especializado em Angular, .NET, React Native e Arquitectura Micro Frontend.',
   } as L,
   location:  { en: 'Maputo, Mozambique', pt: 'Maputo, Moçambique' } as L,
-  email:     'chichavapro@gmail.com',
+  email:     'chichavacad@gmail.com',
   phone:     '+258 846-970-987',
   whatsapp:  'https://api.whatsapp.com/send?phone=258846970987&text=Hello!',
   github:    'https://github.com/M-Chichava',
-  linkedin:  'https://linkedin.com/in/marcos-chichava-bs321631',
+  linkedin:  'https://linkedin.com/in/m-chichava',
   instagram: 'https://www.instagram.com/mfchichava/',
-  messenger: 'https://m.me/crypticalcoder',
-  website:   'https://m-chichava.github.io/portifolio/',
-  cv:        '/portifolio/assets/Resume.pdf',
+  website:   'https://www.marcoschichava.com/',
+  cv:        '/assets/Resume.pdf',
 }
 
 export const stats = [
@@ -50,8 +49,7 @@ export const skillCategories: { label: L; skills: { name: string; level: SkillLe
       { name: 'JavaScript',  level: 'Advanced'     },
       { name: 'Vite',        level: 'Advanced'     },
       { name: 'Tailwind',    level: 'Advanced'     },
-      { name: 'HTML / CSS',  level: 'Advanced'     },
-      { name: 'Vue.js',      level: 'Intermediate' },
+      { name: 'HTML / CSS',  level: 'Advanced'     }
     ],
   },
   {
@@ -59,8 +57,7 @@ export const skillCategories: { label: L; skills: { name: string; level: SkillLe
     skills: [
       { name: 'React Native',   level: 'Advanced'     },
       { name: 'Expo',           level: 'Advanced'     },
-      { name: 'TypeScript',     level: 'Advanced'     },
-      { name: 'Zustand',        level: 'Advanced'     },
+      { name: 'TypeScript',     level: 'Advanced'     }
     ],
   },
   {
@@ -79,7 +76,6 @@ export const skillCategories: { label: L; skills: { name: string; level: SkillLe
     skills: [
       { name: 'Micro Frontend',   level: 'Advanced'     },
       { name: 'NgRx / Flux',      level: 'Advanced'     },
-      { name: 'Domain-Driven',    level: 'Intermediate' },
       { name: 'REST Design',      level: 'Advanced'     },
       { name: 'CI/CD Pipelines',  level: 'Intermediate' },
     ],
@@ -90,7 +86,6 @@ export const skillCategories: { label: L; skills: { name: string; level: SkillLe
       { name: 'SQL Server',  level: 'Advanced'     },
       { name: 'PostgreSQL',  level: 'Intermediate' },
       { name: 'MySQL',       level: 'Intermediate' },
-      { name: 'MongoDB',     level: 'Intermediate' },
     ],
   },
   {
@@ -127,7 +122,7 @@ export const projects: Project[] = [
       en: 'Salary calculator for Mozambican workers. Calculates IRPS & INSS in real time. 6 languages, biometric lock, fully offline.',
       pt: 'Calculadora de salário para trabalhadores moçambicanos. Calcula IRPS e INSS em tempo real. 6 idiomas, bloqueio biométrico, totalmente offline.',
     },
-    image: '/portifolio/assets/moznetsalary.svg',
+    image: '/assets/moznetsalary.svg',
     tags: ['React Native', 'Expo', 'TypeScript', 'Zustand'],
     category: 'mobile',
     url: 'https://play.google.com/store/apps/details?id=com.chichavapro.mzsalary',
@@ -140,7 +135,7 @@ export const projects: Project[] = [
       en: 'Enterprise-grade salary management platform tailored for Mozambique, supporting net salary calculations, tax compliance, payroll automation, and secure employee data management.',
       pt: 'Plataforma empresarial de gestão salarial adaptada a Moçambique, com cálculo de salário líquido, conformidade fiscal, automatização de processamento salarial e gestão segura de dados dos colaboradores.',
     },
-    image: '/portifolio/assets/moz-net-salary-web.png',
+    image: '/assets/moz-net-salary-web.png',
     tags: ['React', 'TypeScript', '.NET API', 'SQL Server'],
     category: 'web',
     url: 'https://m-chichava.github.io/moz-net-salary/',
@@ -152,7 +147,7 @@ export const projects: Project[] = [
       en: 'Comprehensive restaurant management system with POS integration, order tracking, inventory control, staff management, and real-time reporting to streamline operations.',
       pt: 'Sistema completo de gestão de restaurantes com integração POS, acompanhamento de pedidos, controlo de inventário, gestão de pessoal e relatórios em tempo real para optimizar as operações.',
     },
-    image: '/portifolio/assets/restaurant-management.png',
+    image: '/assets/restaurant-management.png',
     tags: ['React', 'TypeScript', '.NET API', 'SQL Server'],
     category: 'web',
     url: '',

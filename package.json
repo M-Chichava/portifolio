@@ -2,7 +2,7 @@
   "name": "portifolio",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://M-Chichava.github.io/portifolio/",
+  "homepage": "https://www.marcoschichava.com/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

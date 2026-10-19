@@ -141,7 +141,7 @@ export default function Hero() {
               {/* Photo */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden ring-2 ring-brand/40">
                 <Image
-                  src="/portifolio/assets/DSC_4848.JPG"
+                  src="/assets/DSC_4848.JPG"
                   alt="Marcos Chichava"
                   fill
                   className="object-cover object-top"

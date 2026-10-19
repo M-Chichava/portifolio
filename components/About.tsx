@@ -36,7 +36,7 @@ export default function About() {
               <div className="absolute -inset-3 rounded-3xl bg-brand/10 blur-xl" />
               <div className="relative rounded-3xl overflow-hidden aspect-[4/5] border-2 border-brand/20">
                 <Image
-                  src="/portifolio/assets/profile.jpg"
+                  src="/assets/profile.jpg"
                   alt="Marcos Chichava"
                   fill
                   className="object-cover object-top"
