@@ -74,11 +74,6 @@ export default function Hero() {
           {/* ── Left: Text ── */}
           <div className="order-2 md:order-1 space-y-6">
 
-            <motion.div {...fade(0.1)} className="inline-flex items-center gap-2 bg-brand/10 border border-brand/20 text-brand text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse" />
-              {t.hero.available}
-            </motion.div>
-
             <motion.div {...fade(0.2)}>
               <p className="text-zinc-500 dark:text-zinc-400 font-medium mb-1">{t.hero.hello}</p>
               <h1 className="text-5xl md:text-6xl font-black text-zinc-900 dark:text-white tracking-tight leading-none">
